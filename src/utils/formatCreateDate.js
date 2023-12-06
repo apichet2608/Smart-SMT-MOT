@@ -10,6 +10,6 @@ export const formatDate = (dates) => {
     const seconds = String(date.getUTCSeconds()).padStart(2, "0");
     const milliseconds = String(date.getUTCMilliseconds()).padStart(3, "0");
 
-    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}:${milliseconds}`;
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
   }
 };
