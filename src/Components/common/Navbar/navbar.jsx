@@ -97,6 +97,7 @@ export default function MiniDrawer({ isDarkMode }) {
     { name: "Pre-Bakign", link: "/pre-baking", icon: Icon1 },
     { name: "Reflow", link: "/reflow", icon: Icon2 },
     { name: "Print", link: "/print", icon: Icon3 },
+    { name: "Pick&Place", link: "/pickandplace", icon: Icon3 },
     // Add more sidebar items as needed
   ];
 
@@ -116,6 +117,8 @@ export default function MiniDrawer({ isDarkMode }) {
           return "Reflow";
         case "/print":
           return "Print";
+        case "/pickandplace":
+          return "Pick&Place";
         default:
           return "SMT-MOT";
       }

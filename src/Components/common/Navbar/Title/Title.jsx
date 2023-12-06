@@ -15,6 +15,8 @@ export default function Title() {
           return "Reflow";
         case "/print":
           return "Print";
+        case "/pickandplace":
+          return "Pick&Place";
         default:
           return "SMT-MOT";
       }
