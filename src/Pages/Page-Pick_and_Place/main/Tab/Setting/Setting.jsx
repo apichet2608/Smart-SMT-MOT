@@ -68,7 +68,12 @@ const Setting = () => {
 
   const handleProgramChange = (event, newValue) => {
     // newValue = { program_name: "Program 1" }
-    setSelectProgram(newValue);
+    if (newValue === null) {
+      newValue = { program_name: "ALL" };
+      setSelectProgram(newValue);
+    } else {
+      setSelectProgram(newValue);
+    }
   };
 
   useEffect(() => {
