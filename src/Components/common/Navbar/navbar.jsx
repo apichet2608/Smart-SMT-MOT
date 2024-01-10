@@ -94,12 +94,11 @@ export default function MiniDrawer({ isDarkMode }) {
   const location = useLocation();
   //sidebar items
   const sidebarItems = [
-    // { name: "Bakign", link: "/pre-baking", icon: Icon1 },
+    { name: "Bakign", link: "/pre-baking", icon: Icon1 },
     { name: "Print", link: "/print", icon: Icon3 },
+    { name: "Pick&Place", link: "/pickandplace", icon: Icon3 },
     { name: "Reflow", link: "/reflow", icon: Icon2 },
     // { name: "Print", link: "/print", icon: Icon3 },
-    { name: "Pick&Place", link: "/pickandplace", icon: Icon3 },
-    { name: "Bakign", link: "/pre-baking", icon: Icon1 },
 
     // Add more sidebar items as needed
   ];
