@@ -10,7 +10,7 @@ export default function Title() {
     const getPageTitle = () => {
       switch (location.pathname) {
         case "/pre-baking":
-          return "Pre-Bakign";
+          return "Bakign";
         case "/reflow":
           return "Reflow";
         case "/print":
