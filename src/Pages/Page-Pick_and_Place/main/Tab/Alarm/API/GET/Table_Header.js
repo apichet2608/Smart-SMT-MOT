@@ -4,7 +4,7 @@ export const Table_Header = async (params) => {
   try {
     const response = await axios.get(
       `${import.meta.env.VITE_IP_API}${
-        import.meta.env.VITE_Table_smt_mount_program_log_header
+        import.meta.env.VITE_Table_smt_mount_operation_log_alarm
       }/Table_Header`,
       { params }
     );

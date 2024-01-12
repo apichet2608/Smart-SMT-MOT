@@ -34,7 +34,7 @@ const Setting = () => {
     },
   });
 
-  const [SelectLine, setSelectLine] = useState({ line: "ALL" });
+  const [SelectLine, setSelectLine] = useState({ line_machine: "ALL" });
   const [DistinctLine, setDistinctLine] = useState([]); // ["Line 1", "Line 2", "Line 3"
   const [IsloadDistinctLine, setIsloadDistinctLine] = useState(false); // ["Line 1", "Line 2", "Line 3"
 
@@ -58,9 +58,9 @@ const Setting = () => {
   };
 
   const handleLineChange = (event, newValue) => {
-    // newValue = { line: "Line 1" }
+    // newValue = { line_machine: "Line 1" }
     if (newValue === null) {
-      newValue = { line: "ALL" };
+      newValue = { line_machine: "ALL" };
     }
     setSelectLine(newValue);
     setSelectMachine({ machine: "ALL" });
@@ -106,7 +106,7 @@ const Setting = () => {
   const featchDistinctMachine = async () => {
     setIsloadDistinctMachine(true);
     setDistinctMachine([]);
-    const params = { line: SelectLine.line };
+    const params = { line_machine: SelectLine.line_machine };
     try {
       const response = await distinct_machine(params);
       console.log(response);
@@ -128,7 +128,7 @@ const Setting = () => {
   useEffect(() => {
     if (
       SelectLine &&
-      SelectLine.line !== "" &&
+      SelectLine.line_machine !== "" &&
       SelectMachine &&
       SelectMachine.machine !== ""
     ) {
@@ -144,7 +144,7 @@ const Setting = () => {
     setIsloadTableHeader(true);
     setDataTableHeader([]);
     const params = {
-      line: SelectLine.line,
+      line_machine: SelectLine.line_machine,
       machine: SelectMachine.machine,
       hours: quantity,
     };
@@ -176,7 +176,7 @@ const Setting = () => {
                   labelProp={"Line"}
                   options={DistinctLine}
                   selectedValue={SelectLine}
-                  getOptionLabelProp={(option) => option && option.line}
+                  getOptionLabelProp={(option) => option && option.line_machine}
                   onValueChange={handleLineChange}
                 />
               </Paper>

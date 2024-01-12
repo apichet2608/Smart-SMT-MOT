@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Temp_Humid from "./Tab/TempandHumid/smt_print_lock_data";
 import Print_set from "./Tab/Setting/Print_set";
+import AlarmTab from "./Tab/Alarm/Alarm";
 
 function Print_Page(props) {
   const { children, value, index, ...other } = props;
@@ -68,7 +69,7 @@ export default function BasicTabs() {
         <Temp_Humid />
       </Print_Page>
       <Print_Page value={value} index={2}>
-        Page Alarm
+        <AlarmTab />
       </Print_Page>
     </>
     // </Box>

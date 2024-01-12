@@ -81,14 +81,15 @@ function TableHeader({ Datas }) {
   const columns = [
     // { field: "id", headerName: "ID", width: 300 },
     {
-      field: "date_time",
+      field: "date",
       headerName: "Date",
       width: 180,
       renderCell: (params) => <DateCell value={params.value} />,
     },
-    { field: "line", headerName: "Line", width: 150 },
+    { field: "line_machine", headerName: "Line Machine", width: 150 },
     { field: "machine", headerName: "Machine", width: 150 },
-    { field: "alarm_list", headerName: "Alarm List", flex: 1 },
+    { field: "alarm", headerName: "Alarm", width: 150 },
+    { field: "alarm_result", headerName: "Alarm result", flex: 1 },
     // { field: "board_size_x", headerName: "Board size X(mm)", width: 150 },
     // { field: "board_size_y", headerName: "Board size Y(mm)", width: 150 },
     // { field: "board_size_z", headerName: "Board size Z(mm)", width: 150 },
