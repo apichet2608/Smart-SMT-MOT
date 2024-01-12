@@ -3,9 +3,9 @@ import Grid from "@mui/material/Grid";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
-import Autocomplete_Line from "./Components/Setting/Autocomplete/Autocomplete";
-import Autocomplete_Machine from "./Components/Setting/Autocomplete/Autocomplete";
-import Autocomplete_Program from "./Components/Setting/Autocomplete/Autocomplete";
+import Autocomplete_Line from "./Components/Autocomplete/Autocomplete";
+import Autocomplete_Machine from "./Components/Autocomplete/Autocomplete";
+import Autocomplete_Program from "./Components/Autocomplete/Autocomplete";
 import axios from "axios";
 import Loading from "../../../../../Components/common/Loading/loading";
 import { distinct_line } from "./API/GET/distinct_line";
@@ -15,8 +15,8 @@ import { Table_Header } from "./API/GET/Table_Header";
 import { Table_Result } from "./API/GET/Table_Result";
 import Divider from "@mui/material/Divider";
 
-import TableHeader from "./Components/Setting/TableHeader/TableHeader";
-import TableResult from "./Components/Setting/TableResult/TableResult";
+import TableHeader from "./Components/TableHeader/TableHeader";
+import TableResult from "./Components/TableResult/TableResult";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
