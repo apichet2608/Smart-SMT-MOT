@@ -1,0 +1,35 @@
+// StatusChip.js
+import React from "react";
+
+const StatusChip = ({ status }) => {
+  let backgroundColor = "";
+  let hoverBackgroundColor = "";
+
+  switch (status) {
+    case "Open":
+      backgroundColor = "bg-red-400";
+      hoverBackgroundColor = "hover:bg-red-500";
+      break;
+    case "Finished":
+      backgroundColor = "bg-green-400";
+      hoverBackgroundColor = "hover:bg-green-500";
+      break;
+    case "Ongoing":
+      backgroundColor = "bg-yellow-400";
+      hoverBackgroundColor = "hover:bg-yellow-500";
+      break;
+    default:
+      // Set default styles or handle other cases
+      break;
+  }
+
+  return (
+    <div
+      className={`${backgroundColor} ${hoverBackgroundColor} border-2 border-gray-200 rounded-2xl text-black text-center p-3 w-full m-0.5 font-bold`}
+    >
+      {status}
+    </div>
+  );
+};
+
+export default StatusChip;
