@@ -141,7 +141,6 @@ export default function QuantitySelect() {
 
   return (
     <React.Fragment>
-      {" "}
       <ThemeProvider theme={theme}>
         <Grid container spacing={2}>
           <Grid item xs={3} sm={3} md={3} lg={3} xl={3}>
@@ -205,7 +204,7 @@ export default function QuantitySelect() {
           </Grid>
           {data.length > 0 ? (
             <React.Fragment>
-              <Grid item xl={12} mt={2}>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} mt={2}>
                 <Item>
                   <O2_Conc_Cool1_Zone1_6_8_Chart
                     dataplot={data}
@@ -218,7 +217,7 @@ export default function QuantitySelect() {
                   <TempChart dataplot={data} categories={categories} />
                 </Item>
               </Grid>
-              <Grid itemxs={12} sm={12} md={12} lg={12} xl={12} mt={2}>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} mt={2}>
                 <Item>
                   <O2_Conc_Zone7_Chart
                     dataplot={data}
