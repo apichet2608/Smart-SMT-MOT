@@ -212,11 +212,6 @@ export default function QuantitySelect() {
                   />
                 </Item>
               </Grid>
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <Item>
-                  <TempChart dataplot={data} categories={categories} />
-                </Item>
-              </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} mt={2}>
                 <Item>
                   <O2_Conc_Zone7_Chart
@@ -225,6 +220,12 @@ export default function QuantitySelect() {
                   />
                 </Item>
               </Grid>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Item>
+                  <TempChart dataplot={data} categories={categories} />
+                </Item>
+              </Grid>
+
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <div
                   style={{

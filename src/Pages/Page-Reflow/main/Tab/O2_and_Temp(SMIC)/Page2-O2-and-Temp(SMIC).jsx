@@ -261,14 +261,15 @@ export default function QuantitySelect() {
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Item>
-                  <Temp_Chart dataplot={data} categories={categories} />
+                  <O2_Conc_Chart dataplot={data} categories={categories} />
                 </Item>
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Item>
-                  <O2_Conc_Chart dataplot={data} categories={categories} />
+                  <Temp_Chart dataplot={data} categories={categories} />
                 </Item>
               </Grid>
+
               {/* <Grid item xl={12} >
                         <Item>
                           <O2_Conc_Chart
