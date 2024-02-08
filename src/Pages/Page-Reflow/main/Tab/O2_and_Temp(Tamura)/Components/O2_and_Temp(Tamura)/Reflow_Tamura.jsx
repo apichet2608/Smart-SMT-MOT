@@ -6,23 +6,28 @@ import Avatar from "@mui/material/Avatar";
 const ChartComponent = ({ dataplot, categories }) => {
   const inputData = dataplot;
 
-  const usl = inputData.map((dataPoint) => {
-    return { x: dataPoint.create_at, y: dataPoint.result };
-  });
+  const usl = inputData.map((dataPoint) => ({
+    x: dataPoint.create_at,
+    y: dataPoint.result,
+  }));
 
   const series = ["Status Signal"];
   const chartData = [usl];
   console.log(chartData);
-  // ดึงค่าล่าสุดจาก dataplot
+
   const latestValues = {};
 
   series.forEach((seriesName, index) => {
     const seriesData = chartData[index];
-    const lastDataPoint = seriesData[seriesData.length - 1];
-    latestValues[seriesName] = lastDataPoint.y;
+    if (seriesData && seriesData.length > 0) {
+      // Check if seriesData is not empty
+      const lastDataPoint = seriesData[seriesData.length - 1];
+      if (lastDataPoint) {
+        // Check if lastDataPoint is not undefined
+        latestValues[seriesName] = lastDataPoint.y;
+      }
+    }
   });
-
-  console.log(latestValues);
 
   console.log(latestValues);
 
@@ -104,7 +109,7 @@ const ChartComponent = ({ dataplot, categories }) => {
       automargin: true,
     },
     yaxis: {
-      title: "oC",
+      // title: "oC",
     },
     // width: 1450,
     height: 350,

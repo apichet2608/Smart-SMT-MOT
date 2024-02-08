@@ -13,10 +13,10 @@ import RemoveIcon from "@mui/icons-material/Remove";
 // import { format } from "date-fns";
 import Autocomplete from "@mui/material/Autocomplete";
 import axios from "axios";
-import ChartComponent from "./Components/O2_and_Temp(SMIC)/o2_concentration_pv_ppm";
-import ChartComponent3 from "./Components/O2_and_Temp(SMIC)/Temp";
-import ChartComponent2 from "./Components/O2_and_Temp(SMIC)/O2_Conc";
-import ChartComponent4 from "./Components/O2_and_Temp(SMIC)/plot4";
+import O2_concentration_pv_ppm_Chart from "./Components/O2_and_Temp(SMIC)/o2_concentration_pv_ppm";
+import Temp_Chart from "./Components/O2_and_Temp(SMIC)/Temp";
+import O2_Conc_Chart from "./Components/O2_and_Temp(SMIC)/O2_Conc";
+// import Plot4_Chart from "./Components/O2_and_Temp(SMIC)/plot4";
 import Chip from "@mui/material/Chip";
 import { formatdatewithtimeforplotly } from "../../../../../utils/formatdatewithtimeforplotly"; // Import formatDate function from utils
 import LoadingPage from "../../../../../Components/common/Loading/loading.jsx";
@@ -253,22 +253,25 @@ export default function QuantitySelect() {
             <React.Fragment>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Item>
-                  <ChartComponent dataplot={data} categories={categories} />
+                  <O2_concentration_pv_ppm_Chart
+                    dataplot={data}
+                    categories={categories}
+                  />
                 </Item>
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Item>
-                  <ChartComponent3 dataplot={data} categories={categories} />
+                  <Temp_Chart dataplot={data} categories={categories} />
                 </Item>
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Item>
-                  <ChartComponent2 dataplot={data} categories={categories} />
+                  <O2_Conc_Chart dataplot={data} categories={categories} />
                 </Item>
               </Grid>
               {/* <Grid item xl={12} >
                         <Item>
-                          <ChartComponent2
+                          <O2_Conc_Chart
                             dataplot={data}
                             categories={categories}
                           />
@@ -276,7 +279,7 @@ export default function QuantitySelect() {
                       </Grid>
                       <Grid item xl={12} >
                         <Item>
-                          <ChartComponent3
+                          <Temp_Chart
                             dataplot={data}
                             categories={categories}
                           />
@@ -296,7 +299,7 @@ export default function QuantitySelect() {
                         </div>
 
                         <Item>
-                          <ChartComponent4
+                          <Plot4_Chart
                             dataplot={dataTamura}
                             categories={categoriesTamura}
                           />

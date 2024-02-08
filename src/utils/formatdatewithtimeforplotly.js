@@ -9,6 +9,6 @@ export const formatdatewithtimeforplotly = (dates) => {
     const seconds = String(date.getUTCSeconds()).padStart(2, "0");
     const milliseconds = String(date.getUTCMilliseconds()).padStart(3, "0");
 
-    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}.${milliseconds}`;
+    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
   }
 };

@@ -9,10 +9,10 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import Autocomplete from "@mui/material/Autocomplete";
 import axios from "axios";
-import ChartComponent from "./Components/O2_and_Temp(Tamura)/O2_Conc_Cool1_Zone1_6_8";
-import ChartComponent3 from "./Components/O2_and_Temp(Tamura)/O2_Conc_Zone7";
-import ChartComponent2 from "./Components/O2_and_Temp(Tamura)/Temp";
-import ChartComponent4 from "./Components/O2_and_Temp(Tamura)/Reflow_Tamura";
+import O2_Conc_Cool1_Zone1_6_8_Chart from "./Components/O2_and_Temp(Tamura)/O2_Conc_Cool1_Zone1_6_8";
+import O2_Conc_Zone7_Chart from "./Components/O2_and_Temp(Tamura)/O2_Conc_Zone7";
+import TempChart from "./Components/O2_and_Temp(Tamura)/Temp";
+import Reflow_TamuraChart from "./Components/O2_and_Temp(Tamura)/Reflow_Tamura";
 import Chip from "@mui/material/Chip";
 import { formatdatewithtimeforplotly } from "../../../../../utils/formatdatewithtimeforplotly"; // Import formatDate function from utils
 import LoadingPage from "../../../../..//Components/common/Loading/loading";
@@ -207,17 +207,23 @@ export default function QuantitySelect() {
             <React.Fragment>
               <Grid item xl={12} mt={2}>
                 <Item>
-                  <ChartComponent dataplot={data} categories={categories} />
+                  <O2_Conc_Cool1_Zone1_6_8_Chart
+                    dataplot={data}
+                    categories={categories}
+                  />
                 </Item>
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Item>
-                  <ChartComponent2 dataplot={data} categories={categories} />
+                  <TempChart dataplot={data} categories={categories} />
                 </Item>
               </Grid>
               <Grid itemxs={12} sm={12} md={12} lg={12} xl={12} mt={2}>
                 <Item>
-                  <ChartComponent3 dataplot={data} categories={categories} />
+                  <O2_Conc_Zone7_Chart
+                    dataplot={data}
+                    categories={categories}
+                  />
                 </Item>
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -236,7 +242,7 @@ export default function QuantitySelect() {
                 </div>
 
                 <Item>
-                  <ChartComponent4
+                  <Reflow_TamuraChart
                     dataplot={dataTamura}
                     categories={categoriesTamura}
                   />

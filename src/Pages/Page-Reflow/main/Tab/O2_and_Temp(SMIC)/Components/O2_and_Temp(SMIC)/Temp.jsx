@@ -107,7 +107,7 @@ const ChartComponent = ({ dataplot, categories }) => {
       automargin: true,
     },
     yaxis: {
-      title: "oC",
+      title: "Celsius degree",
     },
     // width: 1450,
     height: 350,
