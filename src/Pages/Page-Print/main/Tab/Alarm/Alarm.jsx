@@ -10,7 +10,7 @@ import Loading from "../../../../../Components/common/Loading/loading";
 import { distinct_line } from "./API/GET/distinct_line";
 import { distinct_machine } from "./API/GET/distinct_machine";
 import { Table_Header } from "./API/GET/Table_Header";
-import Quantityselect from "./Components/Quantityselect/Quantityselect";
+import Quantityselect from "./Components/quantityselect/quantityselect";
 import TableHeader from "./Components/TableHeader/TableHeader";
 
 const Item = styled(Paper)(({ theme }) => ({

@@ -81,6 +81,16 @@ function CustomNoRowsOverlay() {
 function TableResult({ Datas }) {
   const columns = [
     // { field: "id", headerName: "ID", width: 300 },
+
+    {
+      field: "date_time",
+      headerName: "Date",
+      width: 200,
+      renderCell: (params) => <DateCell value={params.value} />,
+    },
+    { field: "line", headerName: "Line", width: 100 },
+    { field: "machine", headerName: "Machine", width: 150 },
+    // { field: "machine", headerName: "Machine", width: 150 },
     {
       field: "judge",
       headerName: "Verify",
@@ -105,17 +115,8 @@ function TableResult({ Datas }) {
       width: 150,
       renderCell: (params) => <StatusCell status={params.value} />,
     },
-    {
-      field: "date_time",
-      headerName: "Date",
-      width: 180,
-      renderCell: (params) => <DateCell value={params.value} />,
-    },
-    { field: "line", headerName: "Line", width: 150 },
-    { field: "machine", headerName: "Machine", width: 150 },
-    { field: "machine", headerName: "Machine", width: 150 },
     { field: "program_name", headerName: "Program", width: 150 },
-    { field: "part_name", headerName: "Part name", width: 150 },
+    { field: "part_name", headerName: "Part name", width: 200 },
     { field: "comp_size_x", headerName: "X(mm)", width: 150 },
     { field: "comp_size_y", headerName: "Y(mm)", width: 150 },
     { field: "comp_size_z", headerName: "Z(mm)", width: 150 },
@@ -130,7 +131,7 @@ function TableResult({ Datas }) {
 
   return (
     <Paper>
-      <div style={{ height: 350, width: "100%" }}>
+      <div style={{ height: 600, width: "100%" }}>
         <DataGrid
           rows={Datas}
           columns={columns}

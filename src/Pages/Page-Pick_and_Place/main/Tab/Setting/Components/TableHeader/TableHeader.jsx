@@ -83,7 +83,7 @@ function TableHeader({ Datas }) {
     {
       field: "date_time",
       headerName: "Date",
-      width: 180,
+      width: 200,
       renderCell: (params) => <DateCell value={params.value} />,
     },
     { field: "line", headerName: "Line", width: 150 },

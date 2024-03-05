@@ -215,7 +215,7 @@ const Setting = () => {
   };
 
   return (
-    <div>
+    <div className="grid gap-4 grid-cols-1">
       <ThemeProvider theme={theme}>
         {/* <div className="container mx-auto"> */}
         {/* <h1>Welcome to Real Time Parametor Dashboard</h1> */}
@@ -266,26 +266,7 @@ const Setting = () => {
               </Paper>
             )}
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            {DataTableHeader && DataTableHeader.length > 0 ? (
-              <>
-                {IsloadTableHeader ? (
-                  <>
-                    <Loading />
-                  </>
-                ) : (
-                  <>
-                    <TableHeader Datas={DataTableHeader} />
-                  </>
-                )}
-              </>
-            ) : (
-              <>No Data Header</>
-            )}
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            <Divider />
-          </Grid>
+
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
             {DataTableresult && DataTableresult.length > 0 ? (
               <>
@@ -303,6 +284,26 @@ const Setting = () => {
               <>No Data Result</>
             )}
           </Grid>
+        </Grid>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Divider />
+        </Grid>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          {DataTableHeader && DataTableHeader.length > 0 ? (
+            <>
+              {IsloadTableHeader ? (
+                <>
+                  <Loading />
+                </>
+              ) : (
+                <>
+                  <TableHeader Datas={DataTableHeader} />
+                </>
+              )}
+            </>
+          ) : (
+            <>No Data Header</>
+          )}
         </Grid>
         {/* <h4>Overall Energy Monitoring</h4> */}
         {/* </div> */}
