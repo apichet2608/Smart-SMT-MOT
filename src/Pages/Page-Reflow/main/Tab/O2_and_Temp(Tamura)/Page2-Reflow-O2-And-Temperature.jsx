@@ -206,7 +206,11 @@ export default function QuantitySelect() {
             <React.Fragment>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} mt={2}>
                 <Item>
-                  <O2_Conc_Cool1_Zone1_6_8_Chart
+                  {/* <O2_Conc_Cool1_Zone1_6_8_Chart
+                    dataplot={data}
+                    categories={categories}
+                  /> */}
+                  <O2_Conc_Zone7_Chart
                     dataplot={data}
                     categories={categories}
                   />
@@ -214,7 +218,11 @@ export default function QuantitySelect() {
               </Grid>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} mt={2}>
                 <Item>
-                  <O2_Conc_Zone7_Chart
+                  {/* <O2_Conc_Zone7_Chart
+                    dataplot={data}
+                    categories={categories}
+                  /> */}
+                  <O2_Conc_Cool1_Zone1_6_8_Chart
                     dataplot={data}
                     categories={categories}
                   />
