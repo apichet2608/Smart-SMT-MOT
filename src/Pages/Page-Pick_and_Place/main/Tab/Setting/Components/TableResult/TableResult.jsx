@@ -94,29 +94,29 @@ function TableResult({ Datas }) {
     {
       field: "judge",
       headerName: "Verify",
-      width: 150,
+      width: 180,
       renderCell: (params) => <StatusCell status={params.value} />,
     },
     {
       field: "pickup_height_judge",
       headerName: "Pickup height Judge",
-      width: 150,
+      width: 180,
       renderCell: (params) => <StatusCell status={params.value} />,
     },
     {
       field: "pickup_speed_judge",
       headerName: "Pickup speed Judge",
-      width: 150,
+      width: 180,
       renderCell: (params) => <StatusCell status={params.value} />,
     },
     {
       field: "mount_speed_judge",
       headerName: "Mount speed Judge",
-      width: 150,
+      width: 180,
       renderCell: (params) => <StatusCell status={params.value} />,
     },
     { field: "program_name", headerName: "Program", width: 150 },
-    { field: "part_name", headerName: "Part name", width: 200 },
+    { field: "part_name", headerName: "Part name", width: 300 },
     { field: "comp_size_x", headerName: "X(mm)", width: 150 },
     { field: "comp_size_y", headerName: "Y(mm)", width: 150 },
     { field: "comp_size_z", headerName: "Z(mm)", width: 150 },
@@ -131,7 +131,7 @@ function TableResult({ Datas }) {
 
   return (
     <Paper>
-      <div style={{ height: 600, width: "100%" }}>
+      <div style={{ height: 450, width: "100%" }}>
         <DataGrid
           rows={Datas}
           columns={columns}

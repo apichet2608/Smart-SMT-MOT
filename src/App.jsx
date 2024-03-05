@@ -26,7 +26,7 @@ export default function MiniDrawer() {
   return (
     <div
       style={{
-        backgroundColor: isDarkMode ? "#E0E4E5" : "#FFFFFF",
+        backgroundColor: isDarkMode ? "#a9a9a9" : "#FFFFFF",
         height: "100%",
         minHeight: "100vh",
       }}

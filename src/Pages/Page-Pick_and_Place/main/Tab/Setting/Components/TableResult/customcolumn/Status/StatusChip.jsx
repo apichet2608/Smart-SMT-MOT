@@ -21,7 +21,7 @@ const StatusChip = ({ status }) => {
 
   return (
     <div
-      className={`${backgroundColor} ${hoverBackgroundColor} border-2 border-gray-200 rounded-2xl text-black text-center p-3 w-full m-0.5 font-bold`}
+      className={`${backgroundColor} ${hoverBackgroundColor} border-2 border-gray-200 rounded-2xl text-black text-center w-full font-bold`}
     >
       {status}
     </div>
