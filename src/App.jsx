@@ -41,31 +41,31 @@ export default function MiniDrawer() {
         >
           <Navbar isDarkMode={isDarkMode} />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-            <div className="container mx-auto">
-              <DrawerHeader />
-              <Routes>
-                <Route
-                  path="/"
-                  element={<PageFormat1 isDarkMode={isDarkMode} />}
-                />
-                <Route
-                  path="/pre-baking"
-                  element={<PreBaking isDarkMode={isDarkMode} />}
-                />
-                <Route
-                  path="/reflow"
-                  element={<Reflow isDarkMode={isDarkMode} />}
-                />
-                <Route
-                  path="/print"
-                  element={<Print isDarkMode={isDarkMode} />}
-                />
-                <Route
-                  path="/pickandplace"
-                  element={<Pick_and_Place isDarkMode={isDarkMode} />}
-                />
-              </Routes>
-            </div>
+            {/* <div className="container mx-auto"> */}
+            <DrawerHeader />
+            <Routes>
+              <Route
+                path="/"
+                element={<PageFormat1 isDarkMode={isDarkMode} />}
+              />
+              <Route
+                path="/pre-baking"
+                element={<PreBaking isDarkMode={isDarkMode} />}
+              />
+              <Route
+                path="/reflow"
+                element={<Reflow isDarkMode={isDarkMode} />}
+              />
+              <Route
+                path="/print"
+                element={<Print isDarkMode={isDarkMode} />}
+              />
+              <Route
+                path="/pickandplace"
+                element={<Pick_and_Place isDarkMode={isDarkMode} />}
+              />
+            </Routes>
+            {/* </div> */}
           </Box>
         </Box>
       </>

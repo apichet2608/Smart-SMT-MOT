@@ -5,6 +5,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import SettingPage from "./Tab/Setting/Setting";
+import PickupRatePage from "./Tab/PickupRate/PickupRate";
 import AlarmPage from "./Tab/Alarm/Alarm";
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -64,7 +65,9 @@ export default function BasicTabs() {
         </>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <>2</>
+        <>
+          <PickupRatePage />
+        </>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <>
