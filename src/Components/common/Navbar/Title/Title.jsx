@@ -17,6 +17,8 @@ export default function Title() {
           return "Print";
         case "/pickandplace":
           return "Pick&Place";
+        case "/spi":
+          return "SPI";
         default:
           return "SMT-MOT";
       }

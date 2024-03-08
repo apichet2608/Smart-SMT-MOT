@@ -13,6 +13,9 @@ import FujiLogo from "../../../../public/Fuji.png";
 import Icon1 from "../../../../public/icon/baking.png";
 import Icon2 from "../../../../public/icon/project.png";
 import Icon3 from "../../../../public/icon/print.png";
+import spi from "../../../../public/icon/spi.png";
+import reflow from "../../../../public/icon/reflow.png";
+import pick from "../../../../public/icon/pick.png";
 import PageTitle from "./Title/Title";
 import Navbuttton from "./Button/Navbuttton";
 import { NavLink, useLocation } from "react-router-dom";
@@ -96,8 +99,9 @@ export default function MiniDrawer({ isDarkMode }) {
   const sidebarItems = [
     { name: "Pre-Baking", link: "/pre-baking", icon: Icon1 },
     { name: "Print", link: "/print", icon: Icon3 },
-    { name: "Pick&Place", link: "/pickandplace", icon: Icon3 },
-    { name: "Reflow", link: "/reflow", icon: Icon2 },
+    { name: "Pick&Place", link: "/pickandplace", icon: pick },
+    { name: "SPI", link: "/spi", icon: spi },
+    { name: "Reflow", link: "/reflow", icon: reflow },
     // { name: "Print", link: "/print", icon: Icon3 },
 
     // Add more sidebar items as needed
@@ -121,6 +125,8 @@ export default function MiniDrawer({ isDarkMode }) {
           return "Print";
         case "/pickandplace":
           return "Pick&Place";
+        case "/spi":
+          return "SPI";
         default:
           return "SMT-MOT";
       }

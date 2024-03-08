@@ -7,6 +7,7 @@ import PreBaking from "./Pages/Pre-Baking/main/Pre-Baking.jsx";
 import Reflow from "./Pages/Page-Reflow/main/Page-Select-Tab.jsx";
 import Print from "./Pages/Page-Print/main/Print-main.jsx";
 import Pick_and_Place from "./Pages/Page-Pick_and_Place/main/Page-Pick_and_Place.jsx";
+import SPI from "./Pages/Page-SPI/main/SPI.jsx";
 import Navbar from "./Components/common/Navbar/navbar.jsx";
 import { useDarkMode } from "./Components/common/DarkModeContext/DarkModeContext.jsx";
 import { useLocation } from "react-router-dom";
@@ -26,7 +27,7 @@ export default function MiniDrawer() {
   return (
     <div
       style={{
-        backgroundColor: isDarkMode ? "#a9a9a9" : "#FFFFFF",
+        backgroundColor: isDarkMode ? "#a9a9a9" : "#eeeeee",
         height: "100%",
         minHeight: "100vh",
       }}
@@ -64,6 +65,7 @@ export default function MiniDrawer() {
                 path="/pickandplace"
                 element={<Pick_and_Place isDarkMode={isDarkMode} />}
               />
+              <Route path="/spi" element={<SPI isDarkMode={isDarkMode} />} />
             </Routes>
             {/* </div> */}
           </Box>

@@ -41,15 +41,15 @@ const StyledDataGrid = styled(DataGrid)({
 
 export default function Table({ rows, columns }) {
   return (
-    <div className="bg-white p-4 rounded-xl shadow-lg">
+    <div className="bg-white p-4 rounded-xl">
       <StyledDataGrid
         rows={rows}
         columns={columns}
         slots={{ toolbar: GridToolbar }}
         slotProps={{ toolbar: { showQuickFilter: true } }}
-        getRowHeight={() => "auto"}
+        getRowHeight={() => 35}
         sx={{
-          height: 400,
+          height: 650,
         }}
       />
     </div>

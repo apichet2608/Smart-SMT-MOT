@@ -77,7 +77,7 @@ function Navbuttton({
                 }}
               >
                 <img
-                  style={{ width: "24px", height: "24px" }}
+                  style={{ width: "32px", height: "32px" }}
                   src={text.icon}
                 />
               </ListItemIcon>
