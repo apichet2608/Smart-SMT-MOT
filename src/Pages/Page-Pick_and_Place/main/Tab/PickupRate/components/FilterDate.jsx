@@ -15,7 +15,12 @@ export default function FilterDate({
           label={idLabel}
           type="date"
           variant="standard"
-          sx={{ width: "100%" }}
+          sx={{
+            width: "100%",
+            '& input[type="date"]::-webkit-calendar-picker-indicator': {
+              filter: "invert(1)", // This inverts the color to black
+            },
+          }}
           value={value}
           onChange={(e) =>
             setValue(e.target.value ? e.target.value : formattedDate)
