@@ -7,6 +7,7 @@ import StackChart from "./components/StackChart";
 import FilterSelect from "./components/FilterSelect";
 import Table from "./components/Table";
 import DialogAddNote from "./components/DialogAddNote";
+import FilterDate from "./components/FilterDate";
 
 //!Icons
 import NoteAltTwoToneIcon from "@mui/icons-material/NoteAltTwoTone";
@@ -25,6 +26,20 @@ function PickupRate() {
   const [selectedMachineCode, setSelectedMachineCode] = useState("");
   const [selectedLine, setSelectedLine] = useState("");
 
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate()); // Subtract 1 day
+  const formattedCurrentDate = currentDate.toISOString().split("T")[0];
+
+  const [selectedToDate, setSelectedToDate] = useState(formattedCurrentDate);
+
+  const fromDate = new Date(currentDate.getTime() - 30 * 24 * 60 * 60 * 1000);
+  const formattedFromDate = fromDate.toISOString().split("T")[0];
+
+  const [selectedFromDate, setSelectedFromDate] = useState(formattedFromDate);
+
+  console.log("selectedFromDate", selectedFromDate);
+  console.log("selectedToDate", selectedToDate);
+
   //*Dialog
   const [openAddNoteDialog, setOpenAddNoteDialog] = useState(false);
 
@@ -40,7 +55,7 @@ function PickupRate() {
       .get(
         `${import.meta.env.VITE_IP_API}/${
           import.meta.env.VITE_Pickup_Rate
-        }/get_sum_error_table`
+        }/get_sum_error_table?startDate=${selectedFromDate}&endDate=${selectedToDate}`
       )
       .then((res) => {
         const data = res.data;
@@ -51,7 +66,7 @@ function PickupRate() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [selectedFromDate, selectedToDate]);
 
   //?Machine Code
   useEffect(() => {
@@ -59,7 +74,7 @@ function PickupRate() {
       .get(
         `${import.meta.env.VITE_IP_API}/${
           import.meta.env.VITE_Pickup_Rate
-        }/get_sum_error_table?program_name=${selectedProgramName}`
+        }/get_sum_error_table?program_name=${selectedProgramName}&startDate=${selectedFromDate}&endDate=${selectedToDate}`
       )
       .then((res) => {
         const data = res.data;
@@ -70,7 +85,7 @@ function PickupRate() {
       .catch((err) => {
         console.log(err);
       });
-  }, [selectedProgramName]);
+  }, [selectedProgramName, selectedFromDate, selectedToDate]);
 
   //?Line
   useEffect(() => {
@@ -78,7 +93,7 @@ function PickupRate() {
       .get(
         `${import.meta.env.VITE_IP_API}/${
           import.meta.env.VITE_Pickup_Rate
-        }/get_sum_error_table?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}`
+        }/get_sum_error_table?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}&startDate=${selectedFromDate}&endDate=${selectedToDate}`
       )
       .then((res) => {
         const data = res.data;
@@ -89,7 +104,12 @@ function PickupRate() {
       .catch((err) => {
         console.log(err);
       });
-  }, [selectedProgramName, selectedMachineCode]);
+  }, [
+    selectedProgramName,
+    selectedMachineCode,
+    selectedFromDate,
+    selectedToDate,
+  ]);
 
   //*Get Data Chart&Table
   const [rows, setRows] = useState([]);
@@ -238,7 +258,7 @@ function PickupRate() {
       .get(
         `${import.meta.env.VITE_IP_API}/${
           import.meta.env.VITE_Pickup_Rate
-        }/get_sum_error_table?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}&line=${selectedLine}`
+        }/get_sum_error_table?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}&line=${selectedLine}&startDate=${selectedFromDate}&endDate=${selectedToDate}`
       )
       .then((res) => {
         // console.log("res", res.data);
@@ -247,7 +267,7 @@ function PickupRate() {
           .get(
             `${import.meta.env.VITE_IP_API}/${
               import.meta.env.VITE_Pickup_Rate
-            }/get_sum_error_chart?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}&line=${selectedLine}`
+            }/get_sum_error_chart?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}&line=${selectedLine}&startDate=${selectedFromDate}&endDate=${selectedToDate}`
           )
           .then((res) => {
             // console.log("res", res.data);
@@ -271,6 +291,8 @@ function PickupRate() {
     setSelectedProgramName("");
     setSelectedMachineCode("");
     setSelectedLine("");
+    setSelectedFromDate(formattedFromDate);
+    setSelectedToDate(formattedCurrentDate);
 
     axios
       .get(
@@ -319,6 +341,21 @@ function PickupRate() {
   return (
     <>
       <div className="grid grid-cols-1 gap-2">
+        <div className="flex gap-2">
+          <FilterDate
+            idLabel="From Date"
+            value={selectedFromDate}
+            setValue={setSelectedFromDate}
+            formattedDate={formattedFromDate}
+          />
+          <div className="my-auto">-</div>
+          <FilterDate
+            idLabel="To Date"
+            value={selectedToDate}
+            setValue={setSelectedToDate}
+            formattedDate={formattedCurrentDate}
+          />
+        </div>
         <div className="grid grid-cols-5 gap-2">
           <FilterSelect
             options={programNameOptions}
@@ -350,7 +387,7 @@ function PickupRate() {
                   : "hidden"
               }`}
             >
-              Sreach
+              Search
             </button>
             <button
               onClick={handleReset}
