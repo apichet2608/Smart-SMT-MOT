@@ -40,7 +40,7 @@ function PickupRate() {
       .get(
         `${import.meta.env.VITE_IP_API}/${
           import.meta.env.VITE_Pickup_Rate
-        }/get_sum_error`
+        }/get_sum_error_table`
       )
       .then((res) => {
         const data = res.data;
@@ -59,7 +59,7 @@ function PickupRate() {
       .get(
         `${import.meta.env.VITE_IP_API}/${
           import.meta.env.VITE_Pickup_Rate
-        }/get_sum_error?program_name=${selectedProgramName}`
+        }/get_sum_error_table?program_name=${selectedProgramName}`
       )
       .then((res) => {
         const data = res.data;
@@ -78,7 +78,7 @@ function PickupRate() {
       .get(
         `${import.meta.env.VITE_IP_API}/${
           import.meta.env.VITE_Pickup_Rate
-        }/get_sum_error?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}`
+        }/get_sum_error_table?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}`
       )
       .then((res) => {
         const data = res.data;
@@ -116,7 +116,7 @@ function PickupRate() {
       headerAlign: "center",
       width: 180,
       renderCell: (params) => {
-        return new Date(params.row.interval_start_time).toLocaleString();
+        return new Date(params.row.interval_stop_time).toLocaleString();
       },
     },
     {
@@ -238,14 +238,28 @@ function PickupRate() {
       .get(
         `${import.meta.env.VITE_IP_API}/${
           import.meta.env.VITE_Pickup_Rate
-        }/get_sum_error?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}&line=${selectedLine}`
+        }/get_sum_error_table?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}&line=${selectedLine}`
       )
       .then((res) => {
-        console.log("res", res.data);
+        // console.log("res", res.data);
         setRows(res.data);
-        setCategory(res.data.map((item) => item.interval_stop_time));
-        setPickupErrPpmSeries(res.data.map((item) => item.pickup_error_ppm));
-        setRecogErrPpmSeries(res.data.map((item) => item.recog_error_ppm));
+        axios
+          .get(
+            `${import.meta.env.VITE_IP_API}/${
+              import.meta.env.VITE_Pickup_Rate
+            }/get_sum_error_chart?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}&line=${selectedLine}`
+          )
+          .then((res) => {
+            // console.log("res", res.data);
+            setCategory(res.data.map((item) => item.interval_stop_time));
+            setPickupErrPpmSeries(
+              res.data.map((item) => item.pickup_error_ppm)
+            );
+            setRecogErrPpmSeries(res.data.map((item) => item.recog_error_ppm));
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
         console.log(err);
@@ -262,7 +276,7 @@ function PickupRate() {
       .get(
         `${import.meta.env.VITE_IP_API}/${
           import.meta.env.VITE_Pickup_Rate
-        }/get_sum_error?program_name=""&machine_code=""&line=""`
+        }/get_sum_error_table?program_name=""&machine_code=""&line=""`
       )
       .then((res) => {
         console.log("res", res.data);
