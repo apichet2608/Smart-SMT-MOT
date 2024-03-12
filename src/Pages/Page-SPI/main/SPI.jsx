@@ -27,180 +27,6 @@ function Spi() {
   const columns = [
     // { field: "id", headerName: "ID", width: 100 },
     {
-      field: "create_at",
-      headerName: "Created At",
-      width: 150,
-      headerAlign: "center",
-      align: "center",
-      renderCell: renderDatetime,
-    },
-    {
-      field: "site",
-      headerName: "Site",
-      width: 75,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "station_type",
-      headerName: "Station Type",
-      width: 100,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "product",
-      headerName: "Product",
-      width: 75,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "test_result",
-      headerName: "Test Result",
-      width: 100,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "unit_serial_number",
-      headerName: "Unit Serial Number",
-      width: 200,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "uut_start",
-      headerName: "UUT Start",
-      width: 150,
-      headerAlign: "center",
-      align: "center",
-      renderCell: renderDatetime,
-    },
-    {
-      field: "uut_stop",
-      headerName: "UUT Stop",
-      width: 150,
-      headerAlign: "center",
-      align: "center",
-      renderCell: renderDatetime,
-    },
-
-    {
-      field: "limits_version",
-      headerName: "Limits Version",
-      width: 125,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "software_name",
-      headerName: "Software Name",
-      width: 125,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "software_version",
-      headerName: "Software Version",
-      width: 140,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "station_id",
-      headerName: "Station ID",
-      width: 220,
-      headerAlign: "center",
-      align: "center",
-      renderCell: (params) => {
-        return (
-          <div
-            className={`${selectedStation ? "font-bold text-blue-500" : ""}`}
-          >
-            {params.value}
-          </div>
-        );
-      },
-    },
-    {
-      field: "fixture_id",
-      headerName: "Fixture ID",
-      width: 180,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "head_id",
-      headerName: "Head ID",
-      width: 75,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "test",
-      headerName: "Test",
-      width: 75,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "sub_test",
-      headerName: "Sub Test",
-      width: 75,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "sub_sub_test",
-      headerName: "Sub Sub Test",
-      width: 150,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "upper_limit",
-      headerName: "Upper Limit",
-      width: 125,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "lower_limit",
-      headerName: "Lower Limit",
-      width: 125,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "value",
-      headerName: "Value",
-      width: 75,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "units",
-      headerName: "Units",
-      width: 75,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "usl",
-      headerName: "USL",
-      width: 75,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
-      field: "lsl",
-      headerName: "LSL",
-      width: 75,
-      headerAlign: "center",
-      align: "center",
-    },
-    {
       field: "judgement",
       headerName: "Judgement",
       width: 100,
@@ -219,6 +45,187 @@ function Spi() {
           </div>
         );
       },
+    },
+    // {
+    //   field: "create_at",
+    //   headerName: "Created At",
+    //   width: 150,
+    //   headerAlign: "center",
+    //   align: "center",
+    //   renderCell: renderDatetime,
+    // },
+    // {
+    //   field: "site",
+    //   headerName: "Site",
+    //   width: 75,
+    //   headerAlign: "center",
+    //   align: "center",
+    // },
+    // {
+    //   field: "station_type",
+    //   headerName: "Station Type",
+    //   width: 100,
+    //   headerAlign: "center",
+    //   align: "center",
+    // },
+    {
+      field: "product",
+      headerName: "Product",
+      width: 70,
+      headerAlign: "center",
+      align: "center",
+    },
+    // {
+    //   field: "test_result",
+    //   headerName: "Test Result",
+    //   width: 100,
+    //   headerAlign: "center",
+    //   align: "center",
+    // },
+    {
+      field: "unit_serial_number",
+      headerName: "Unit Serial Number",
+      width: 170,
+      headerAlign: "center",
+      align: "center",
+    },
+    // {
+    //   field: "uut_start",
+    //   headerName: "UUT Start",
+    //   width: 150,
+    //   headerAlign: "center",
+    //   align: "center",
+    //   renderCell: renderDatetime,
+    // },
+    {
+      field: "uut_stop",
+      headerName: "Update time",
+      width: 130,
+      headerAlign: "center",
+      align: "center",
+      renderCell: renderDatetime,
+    },
+
+    // {
+    //   field: "limits_version",
+    //   headerName: "Limits Version",
+    //   width: 125,
+    //   headerAlign: "center",
+    //   align: "center",
+    // },
+    // {
+    //   field: "software_name",
+    //   headerName: "Software Name",
+    //   width: 125,
+    //   headerAlign: "center",
+    //   align: "center",
+    // },
+    {
+      field: "software_version",
+      headerName: "Software Version",
+      width: 140,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "station_id",
+      headerName: "Line",
+      width: 200,
+      headerAlign: "center",
+      align: "center",
+      renderCell: (params) => {
+        return (
+          <div
+            className={`${selectedStation ? "font-bold text-blue-500" : ""}`}
+          >
+            {params.value}
+          </div>
+        );
+      },
+    },
+    // {
+    //   field: "fixture_id",
+    //   headerName: "Fixture ID",
+    //   width: 180,
+    //   headerAlign: "center",
+    //   align: "center",
+    // },
+    // {
+    //   field: "head_id",
+    //   headerName: "Head ID",
+    //   width: 75,
+    //   headerAlign: "center",
+    //   align: "center",
+    // },
+    {
+      field: "test",
+      headerName: "Test",
+      width: 70,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "parameter_name",
+      headerName: "Pin Type",
+      width: 130,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "sub_test",
+      headerName: "Pin No.",
+      width: 70,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "sub_sub_test",
+      headerName: "Comp name",
+      width: 150,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "upper_limit",
+      headerName: "MC USL",
+      width: 70,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "lower_limit",
+      headerName: "MC LSL",
+      width: 70,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "value",
+      headerName: "Value",
+      width: 70,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "units",
+      headerName: "Units",
+      width: 70,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "usl",
+      headerName: "USL",
+      width: 70,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "lsl",
+      headerName: "LSL",
+      width: 70,
+      headerAlign: "center",
+      align: "center",
     },
   ];
 

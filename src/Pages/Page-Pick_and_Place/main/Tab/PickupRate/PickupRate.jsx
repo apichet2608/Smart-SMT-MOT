@@ -49,7 +49,7 @@ function PickupRate() {
 
   //!Get API
   //*Get Option
-  //?Program Name
+  //?Line
   useEffect(() => {
     axios
       .get(
@@ -59,9 +59,9 @@ function PickupRate() {
       )
       .then((res) => {
         const data = res.data;
-        const programName = data.map((item) => item.program_name);
-        const distinctProgramName = [...new Set(programName)];
-        setProgramNameOptions(distinctProgramName);
+        const line = data.map((item) => item.line);
+        const distinctLine = [...new Set(line)];
+        setLineOptions(distinctLine);
       })
       .catch((err) => {
         console.log(err);
@@ -74,7 +74,7 @@ function PickupRate() {
       .get(
         `${import.meta.env.VITE_IP_API}/${
           import.meta.env.VITE_Pickup_Rate
-        }/get_sum_error_table?program_name=${selectedProgramName}&startDate=${selectedFromDate}&endDate=${selectedToDate}`
+        }/get_sum_error_table?line=${selectedLine}&startDate=${selectedFromDate}&endDate=${selectedToDate}`
       )
       .then((res) => {
         const data = res.data;
@@ -85,31 +85,26 @@ function PickupRate() {
       .catch((err) => {
         console.log(err);
       });
-  }, [selectedProgramName, selectedFromDate, selectedToDate]);
+  }, [selectedLine, selectedFromDate, selectedToDate]);
 
-  //?Line
+  //?Program Name
   useEffect(() => {
     axios
       .get(
         `${import.meta.env.VITE_IP_API}/${
           import.meta.env.VITE_Pickup_Rate
-        }/get_sum_error_table?program_name=${selectedProgramName}&machine_code=${selectedMachineCode}&startDate=${selectedFromDate}&endDate=${selectedToDate}`
+        }/get_sum_error_table?startDate=${selectedFromDate}&endDate=${selectedToDate}&line=${selectedLine}&mc_code=${selectedMachineCode}`
       )
       .then((res) => {
         const data = res.data;
-        const line = data.map((item) => item.line);
-        const distinctLine = [...new Set(line)];
-        setLineOptions(distinctLine);
+        const programName = data.map((item) => item.program_name);
+        const distinctProgramName = [...new Set(programName)];
+        setProgramNameOptions(distinctProgramName);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [
-    selectedProgramName,
-    selectedMachineCode,
-    selectedFromDate,
-    selectedToDate,
-  ]);
+  }, [selectedFromDate, selectedToDate, selectedLine, selectedMachineCode]);
 
   //*Get Data Chart&Table
   const [rows, setRows] = useState([]);
@@ -358,26 +353,27 @@ function PickupRate() {
         </div>
         <div className="grid grid-cols-5 gap-2">
           <FilterSelect
-            options={programNameOptions}
-            value={selectedProgramName}
-            setValue={setSelectedProgramName}
-            dependentValue={[setSelectedMachineCode, setSelectedLine]}
-            label={"Program Name"}
+            options={lineOptions}
+            value={selectedLine}
+            setValue={setSelectedLine}
+            dependentValue={[setSelectedMachineCode, setSelectedProgramName]}
+            label={"Line"}
           />
           <FilterSelect
             options={machineCodeOptions}
             value={selectedMachineCode}
             setValue={setSelectedMachineCode}
-            dependentValue={[setSelectedLine]}
+            dependentValue={[setSelectedProgramName]}
             label={"Machine Code"}
           />
           <FilterSelect
-            options={lineOptions}
-            value={selectedLine}
-            setValue={setSelectedLine}
+            options={programNameOptions}
+            value={selectedProgramName}
+            setValue={setSelectedProgramName}
             dependentValue={[]}
-            label={"Line"}
+            label={"Program Name"}
           />
+
           <div className="grid grid-cols-2 gap-4">
             <button
               onClick={handleSearch}
