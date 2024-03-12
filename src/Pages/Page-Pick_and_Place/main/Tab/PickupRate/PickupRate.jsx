@@ -251,7 +251,7 @@ function PickupRate() {
       headerName: "Add Note",
       headerAlign: "center",
       align: "center",
-      width: 150,
+      width: 100,
       renderCell: (params) => {
         return (
           <div className="flex justify-center active:scale-90 duration-300">
