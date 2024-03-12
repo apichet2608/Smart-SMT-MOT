@@ -120,7 +120,8 @@ function PickupRate() {
       field: "interval_start_time",
       headerName: "Interval Start Time",
       headerAlign: "center",
-      width: 180,
+      width: 150,
+      align: "center",
       renderCell: (params) => {
         return new Date(params.row.interval_start_time).toLocaleString();
       },
@@ -129,7 +130,8 @@ function PickupRate() {
       field: "interval_stop_time",
       headerName: "Interval Stop Time",
       headerAlign: "center",
-      width: 180,
+      width: 150,
+      align: "center",
       renderCell: (params) => {
         return new Date(params.row.interval_stop_time).toLocaleString();
       },
@@ -154,6 +156,34 @@ function PickupRate() {
       headerAlign: "center",
       align: "center",
       width: 150,
+    },
+    {
+      field: "count_pickup_error",
+      headerName: "Pickup",
+      headerAlign: "center",
+      align: "center",
+      width: 70,
+    },
+    {
+      field: "count_recog_error",
+      headerName: "Recog",
+      headerAlign: "center",
+      align: "center",
+      width: 70,
+    },
+    {
+      field: "count_error",
+      headerName: "Err",
+      headerAlign: "center",
+      align: "center",
+      width: 70,
+    },
+    {
+      field: "input",
+      headerName: "input",
+      headerAlign: "center",
+      align: "center",
+      width: 70,
     },
     {
       field: "pickup_error_ppm",
@@ -214,7 +244,7 @@ function PickupRate() {
       headerName: "Note",
       headerAlign: "center",
       align: "center",
-      width: 500,
+      width: 300,
     },
     {
       field: "action_add_note",
