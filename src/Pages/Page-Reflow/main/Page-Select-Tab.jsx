@@ -8,6 +8,8 @@ import Reflowo2templog from "./Tab/O2_and_Temp(Tamura)/Page2-Reflow-O2-And-Tempe
 import Reflowdemo1 from "./Tab/Setting(Tamura)/Page2-Reflow";
 import Reflowdemo2 from "./Tab/Setting(SMIC)/Page2-Reflow smic";
 import Reflowdemo3 from "./Tab/O2_and_Temp(SMIC)/Page2-O2-and-Temp(SMIC)";
+import ReflowAlarmTamura from "./Tab/Alarm(Tamura)/AlarmTamura";
+import ReflowAlarmSMIC from "./Tab/Alarm(SMIC)/AlarmSMIC";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -65,8 +67,10 @@ export default function BasicTabs() {
         c
         <Tab label="Setting(Tamura)" {...a11yProps(0)} />
         <Tab label="O2 and Temp(Tamura)" {...a11yProps(1)} />
-        <Tab label="Setting(SMIC)" {...a11yProps(2)} />
-        <Tab label="O2 and Temp(SMIC)" {...a11yProps(3)} />
+        <Tab label="Alarm(Tamura)" {...a11yProps(2)} />
+        <Tab label="Setting(SMIC)" {...a11yProps(3)} />
+        <Tab label="O2 and Temp(SMIC)" {...a11yProps(4)} />
+        <Tab label="Alarm(SMIC)" {...a11yProps(5)} />
       </Tabs>
       {/* </Box> */}
       <CustomTabPanel value={value} index={0}>
@@ -76,10 +80,17 @@ export default function BasicTabs() {
         <Reflowo2templog />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <Reflowdemo2 />
+        <ReflowAlarmTamura />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
+        <Reflowdemo2 />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={4}>
         <Reflowdemo3 />
+      </CustomTabPanel>
+
+      <CustomTabPanel value={value} index={5}>
+        <ReflowAlarmSMIC />
       </CustomTabPanel>
       {/* // </Box> */}
     </>
