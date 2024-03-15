@@ -49,7 +49,7 @@ export default function Table({ rows, columns }) {
         slotProps={{ toolbar: { showQuickFilter: true } }}
         getRowHeight={() => 35}
         sx={{
-          height: 650,
+          height: 600,
         }}
       />
     </div>

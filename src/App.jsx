@@ -11,6 +11,7 @@ import SPI from "./Pages/Page-SPI/main/SPI.jsx";
 import Navbar from "./Components/common/Navbar/navbar.jsx";
 import { useDarkMode } from "./Components/common/DarkModeContext/DarkModeContext.jsx";
 import { useLocation } from "react-router-dom";
+import SPI_Tabs from "./Pages/Page-SPI-Tabs/main/SPI_Tabs.jsx";
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
@@ -65,7 +66,11 @@ export default function MiniDrawer() {
                 path="/pickandplace"
                 element={<Pick_and_Place isDarkMode={isDarkMode} />}
               />
-              <Route path="/spi" element={<SPI isDarkMode={isDarkMode} />} />
+              {/* <Route path="/spi" element={<SPI isDarkMode={isDarkMode} />} /> */}
+              <Route
+                path="/spi"
+                element={<SPI_Tabs isDarkMode={isDarkMode} />}
+              />
             </Routes>
             {/* </div> */}
           </Box>

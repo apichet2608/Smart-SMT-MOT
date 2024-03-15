@@ -85,7 +85,7 @@ function Spi() {
     {
       field: "unit_serial_number",
       headerName: "Unit Serial Number",
-      width: 170,
+      width: 210,
       headerAlign: "center",
       align: "center",
     },
@@ -167,7 +167,7 @@ function Spi() {
     {
       field: "parameter_name",
       headerName: "Pin Type",
-      width: 130,
+      width: 150,
       headerAlign: "center",
       align: "center",
     },
