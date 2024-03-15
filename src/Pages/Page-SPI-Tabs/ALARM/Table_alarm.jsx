@@ -133,7 +133,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -145,7 +153,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -157,7 +173,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -169,7 +193,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -181,7 +213,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -193,7 +233,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -205,7 +253,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -217,7 +273,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -229,7 +293,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -241,7 +313,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -253,7 +333,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -265,7 +353,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -277,7 +373,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -289,7 +393,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -301,7 +413,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -313,7 +433,15 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
-        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+        <span
+          style={{
+            backgroundColor: params.value !== "0" ? "#CD5C5C" : "",
+            color: params.value !== "0" ? "#FFFFFF" : "#34495E",
+            fontWeight: "bold",
+            width: "20%",
+            borderRadius: "5px",
+          }}
+        >
           {params.value}
         </span>
       ),
@@ -334,7 +462,8 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
         columns={columns}
         pageSize={5}
         disableRowSelectionOnClick
-        getRowHeight={() => "auto"}
+        rowHeight={25}
+        // getRowHeight={() => "auto"}
         slots={{
           toolbar: GridToolbar,
           noRowsOverlay: CustomNoRowsOverlay,
