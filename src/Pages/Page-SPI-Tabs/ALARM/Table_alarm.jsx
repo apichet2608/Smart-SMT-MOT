@@ -138,7 +138,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -149,7 +149,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
     {
       field: "error",
       headerName: "Error",
-      width: 100,
+      width: 120,
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
@@ -158,7 +158,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "50%",
             borderRadius: "5px",
           }}
         >
@@ -178,7 +178,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -198,7 +198,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -209,7 +209,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
     {
       field: "insufficient_warning",
       headerName: "Insufficient Warning",
-      width: 170,
+      width: 160,
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
@@ -218,7 +218,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "30%",
             borderRadius: "5px",
           }}
         >
@@ -229,7 +229,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
     {
       field: "insufficient_error",
       headerName: "Insufficient Error",
-      width: 170,
+      width: 150,
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
@@ -238,7 +238,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -258,7 +258,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -278,7 +278,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -298,7 +298,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -318,7 +318,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -338,7 +338,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -358,7 +358,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -378,7 +378,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -389,7 +389,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
     {
       field: "area_error",
       headerName: "Area Error",
-      width: 150,
+      width: 140,
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
@@ -398,7 +398,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -418,7 +418,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
@@ -429,7 +429,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
     {
       field: "smear_error",
       headerName: "Smear Error",
-      width: 150,
+      width: 140,
       align: "center",
       headerAlign: "center",
       renderCell: (params) => (
@@ -438,7 +438,7 @@ function Table_SPI_Alarm({ data_alarm, isDarkMode }) {
             backgroundColor: Number(params.value) !== 0 ? "#CD5C5C" : "#FFFFFF", // เปลี่ยนเป็น Number(params.value) !== 0
             color: Number(params.value) !== 0 ? "#FFFFFF" : "#34495E", // เปลี่ยนเป็น Number(params.value) !== 0
             fontWeight: "bold",
-            width: "20%",
+            width: "40%",
             borderRadius: "5px",
           }}
         >
