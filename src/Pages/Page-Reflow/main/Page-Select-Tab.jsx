@@ -59,6 +59,31 @@ export default function BasicTabs() {
         value={value}
         onChange={handleChange}
         aria-label="basic tabs example"
+        sx={{
+          ".MuiTabs-indicator": {
+            backgroundColor: "#FDFEFE",
+            height: "5px",
+          },
+          ".MuiTab-root": {
+            textTransform: "none",
+            fontWeight: 600,
+            borderRadius: "10px",
+            fontSize: "1rem",
+            marginRight: 0.2,
+            marginLeft: 0.6,
+            "&:hover": {
+              backgroundColor: "#CCCCFF",
+            },
+            "&.Mui-selected": {
+              color: "#EBF5FB",
+              backgroundColor: "#6495ED",
+            },
+            "&.Mui-focusVisible": {
+              backgroundColor: "#FDFEFE",
+              color: "primary.contrastText",
+            },
+          },
+        }}
       >
         {/* <Tab label="O2 and Temp(Tamura)" {...a11yProps(0)} />
           <Tab label="Setting(Tamura)" {...a11yProps(1)} />

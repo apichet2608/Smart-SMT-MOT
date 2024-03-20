@@ -121,8 +121,8 @@ export default function QuantitySelect() {
       setData(dataapi);
       console.log(dataapi);
       const categories = dataapi.map((item) => {
-        let date = formatdatewithtimeforplotly(item.update_datetime);
-        return date;
+        //ค่าเวลา update_datetime ล่าสุด
+        return item.update_datetime;
       });
       setCategories(categories); // ตั้งค่า categories ที่นี่
     } catch (error) {
@@ -141,17 +141,21 @@ export default function QuantitySelect() {
         let bgColor = "";
         let borderRadius = "4px"; // You can adjust the radius as needed
         let cellValue = params.value; // Store the original value
+        let color = "";
 
         if (params.value === 1) {
-          bgColor = "rgba(255, 0, 0, 1)"; // Red with full opacity
+          bgColor = "#C0392B"; // Red with full opacity
           cellValue = "Lock"; // Replace 0 with "Match"
+          color = "#FDFEFE";
         } else if (params.value === 0) {
-          bgColor = "rgba(0, 255, 0, 1)"; // Green with full opacity
+          bgColor = "#0BDA51"; // Green with full opacity
           cellValue = "Match"; // Replace 0 with "Match"
+          color = "#34495E";
         } else {
           // No bgcolor for other cases
           bgColor = "transparent"; // No bgcolor for other values
           borderRadius = "0"; // No border radius for other values
+          color = "#34495E";
         }
 
         const cellStyle = {
@@ -160,90 +164,139 @@ export default function QuantitySelect() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "100%",
+          height: "70%",
           width: "100%",
+          color: color,
+          fontWeight: "bold",
         };
 
         return <div style={cellStyle}>{cellValue}</div>;
       },
     },
-    { field: "update_by", headerName: "Update", width: 100 },
+    {
+      field: "update_by",
+      headerName: "Update",
+      width: 100,
+      headerAlign: "center",
+    },
     // { field: "line", headerName: "Line", width: 100 },
     // { field: "machine", headerName: "Machine", width: 120 },
-    { field: "program", headerName: "Program", width: 220 },
-    { field: "conveyor_m_per_min", headerName: "Con(m/min)", width: 120 },
-    { field: "o2_ppm", headerName: "O2 ppm", width: 100 },
-    { field: "interval_time", headerName: "Time int", width: 100 },
+    {
+      field: "program",
+      headerName: "Program",
+      width: 220,
+      headerAlign: "center",
+      renderCell: (params) => {
+        return (
+          <div
+            style={{
+              color: "#34495E",
+              fontWeight: "bold",
+            }}
+          >
+            {params.value}
+          </div>
+        );
+      },
+    },
+    {
+      field: "conveyor_m_per_min",
+      headerName: "Con(m/min)",
+      width: 120,
+      align: "center",
+      headerAlign: "center",
+    },
+    { field: "o2_ppm", headerName: "O2 ppm", width: 100, align: "center" },
+    {
+      field: "interval_time",
+      headerName: "Time int",
+      width: 100,
+      align: "center",
+    },
 
     {
       field: "upper_heater_zone1",
       headerName: "UP Z 1",
       width: 80,
+      align: "center",
     },
     {
       field: "lower_heater_zone1",
       headerName: "LOW Z 1",
       width: 80,
+      align: "center",
     },
     {
       field: "upper_heater_zone2",
       headerName: "UP Z 2",
       width: 80,
+      align: "center",
     },
     {
       field: "lower_heater_zone2",
       headerName: "LOW Z 2",
       width: 80,
+      align: "center",
     },
     {
       field: "upper_heater_zone3",
       headerName: "UP Z 3",
       width: 80,
+      align: "center",
     },
     {
       field: "lower_heater_zone3",
       headerName: "LOW Z 3",
       width: 80,
+      align: "center",
     },
     {
       field: "upper_heater_zone4",
       headerName: "UP Z 4",
       width: 80,
+      align: "center",
     },
     {
       field: "lower_heater_zone4",
       headerName: "LOW Z 4",
       width: 80,
+      align: "center",
     },
     {
       field: "upper_heater_zone5",
       headerName: "UP Z 5",
       width: 80,
+      align: "center",
     },
     {
       field: "lower_heater_zone5",
       headerName: "LOW Z 5",
       width: 80,
+      align: "center",
     },
     {
       field: "upper_heater_zone6",
       headerName: "UP Z 6",
       width: 80,
+      align: "center",
     },
     {
       field: "lower_heater_zone6",
       headerName: "LOW Z 6",
       width: 80,
+      align: "center",
     },
     {
       field: "upper_heater_zone7",
       headerName: "UP Z 7",
       width: 80,
+      align: "center",
     },
     {
       field: "lower_heater_zone7",
       headerName: "LOW Z 7",
       width: 80,
+      align: "center",
     },
 
     // { field: "process", headerName: "Process", width: 150 },
@@ -251,22 +304,28 @@ export default function QuantitySelect() {
       field: "upper_heater_zone8",
       headerName: "UP Z 8",
       width: 80,
+      align: "center",
     },
     {
       field: "lower_heater_zone8",
       headerName: "LOW Z 8",
       width: 80,
+      align: "center",
     },
-    // {
-    //   field: "update_datetime",
-    //   headerName: "Update Datetime",
-    //   width: 200,
-    //   renderCell: (params) => (
-    //     <Typography variant="h7">
-    //       {formatCreateDate(params.row.update_datetime)}
-    //     </Typography>
-    //   ),
-    // },
+    {
+      field: "create_time",
+      headerName: "Create Date",
+      width: 180,
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "update_datetime",
+      headerName: "Update Date",
+      width: 180,
+      align: "center",
+      headerAlign: "center",
+    },
   ];
 
   return (
@@ -274,8 +333,9 @@ export default function QuantitySelect() {
       <ThemeProvider theme={theme}>
         <Grid container spacing={2}>
           <Grid item xs={3} sm={3} md={3} lg={3} xl={3}>
-            <Item>
+            <Item sx={{ borderRadius: 3 }}>
               <Autocomplete
+                size="small"
                 options={distinctline}
                 getOptionLabel={(option) => option && option.line}
                 value={selectedline}
@@ -292,8 +352,9 @@ export default function QuantitySelect() {
             </Item>
           </Grid>
           <Grid item xs={3} sm={3} md={3} lg={3} xl={3}>
-            <Item>
+            <Item sx={{ borderRadius: 3 }}>
               <Autocomplete
+                size="small"
                 options={distinctMachine}
                 getOptionLabel={(option) => option && option.machine}
                 value={selectedMachine}
@@ -325,20 +386,24 @@ export default function QuantitySelect() {
                   rows={data}
                   columns={columns}
                   pagination
-                  // getRowHeight={() => "auto"}
+                  rowHeight={35}
                   pageSize={5}
                   sx={{
-                    height: "750px",
+                    height: "650px",
                     maxWidth: "100%",
                     "& .MuiDataGrid-cell": {
                       borderRight: "1px solid #e0e0e0",
                       // borderTop: "1px solid #e0e0e0",
                     },
-                    "& .MuiDataGrid-columnHeader": {
-                      borderRight: "1px solid #e0e0e0",
-                      borderTop: "1px solid #e0e0e0",
-                      alignItems: "center",
+                    "& .MuiDataGrid-columnHeaderTitle": {
+                      fontWeight: "bold",
+                      color: "#3371ff",
+                      fontSize: "15px",
+                      textAlign: "center",
+                      fontFace: "Poppins", // Note: Corrected property name to lowercase 'fontFace'
+                      display: "flex",
                       justifyContent: "center",
+                      alignItems: "center",
                     },
                   }}
                   slots={{
