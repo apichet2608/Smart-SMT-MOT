@@ -88,8 +88,8 @@ function TableResult({ Datas }) {
       width: 200,
       renderCell: (params) => <DateCell value={params.value} />,
     },
-    { field: "line", headerName: "Line", width: 100 },
-    { field: "machine", headerName: "Machine", width: 150 },
+    { field: "line", headerName: "Line", width: 80 },
+    { field: "machine", headerName: "Machine", width: 100 },
     // { field: "machine", headerName: "Machine", width: 150 },
     {
       field: "judge",
@@ -113,6 +113,12 @@ function TableResult({ Datas }) {
       field: "mount_speed_judge",
       headerName: "Mount speed Judge",
       width: 180,
+      renderCell: (params) => <StatusCell status={params.value} />,
+    },
+    {
+      field: "mount_height_judge",
+      headerName: "Mount Height Judge",
+      width: 170,
       renderCell: (params) => <StatusCell status={params.value} />,
     },
     { field: "program_name", headerName: "Program", width: 150 },
