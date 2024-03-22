@@ -175,7 +175,7 @@ export default function QuantitySelect() {
     },
     {
       field: "update_by",
-      headerName: "Update",
+      headerName: "Update By",
       width: 100,
       headerAlign: "center",
     },

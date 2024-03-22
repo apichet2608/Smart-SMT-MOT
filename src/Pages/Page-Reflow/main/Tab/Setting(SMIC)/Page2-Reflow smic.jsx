@@ -13,6 +13,7 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { formatdatewithtimeforplotly } from "../../../../../utils/formatdatewithtimeforplotly"; // Import formatDate function from utils
 import LoadingPage from "../../../../../Components/common/Loading/loading";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -145,17 +146,21 @@ export default function QuantitySelect() {
         let bgColor = "";
         let borderRadius = "4px"; // You can adjust the radius as needed
         let cellValue = params.value; // Store the original value
+        let color = "";
 
         if (params.value === 1) {
-          bgColor = "rgba(255, 0, 0, 1)"; // Red with full opacity
+          bgColor = "#C0392B"; // Red with full opacity
           cellValue = "Lock"; // Replace 0 with "Match"
+          color = "#FDFEFE";
         } else if (params.value === 0) {
-          bgColor = "rgba(0, 255, 0, 1)"; // Green with full opacity
+          bgColor = "#0BDA51"; // Green with full opacity
           cellValue = "Match"; // Replace 0 with "Match"
+          color = "#34495E";
         } else {
           // No bgcolor for other cases
           bgColor = "transparent"; // No bgcolor for other values
           borderRadius = "0"; // No border radius for other values
+          color = "#34495E";
         }
 
         const cellStyle = {
@@ -164,17 +169,35 @@ export default function QuantitySelect() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "100%",
+          height: "70%",
           width: "100%",
+          color: color,
+          fontWeight: "bold",
         };
 
         return <div style={cellStyle}>{cellValue}</div>;
       },
     },
-    { field: "update_by", headerName: "Update", width: 100 },
+    { field: "update_by", headerName: "Update By", width: 100 },
     // { field: "line", headerName: "Line", width: 100 },
     // { field: "machine", headerName: "Machine", width: 120 },
-    { field: "program", headerName: "Program", width: 220 },
+    {
+      field: "program",
+      headerName: "Program",
+      width: 220,
+      renderCell: (params) => {
+        return (
+          <div
+            style={{
+              color: "#34495E",
+              fontWeight: "bold",
+            }}
+          >
+            {params.value}
+          </div>
+        );
+      },
+    },
     { field: "conveyor_speed", headerName: "Con(m/min)", width: 120 },
     { field: "o2_setting", headerName: "O2 ppm", width: 100 },
     { field: "interval_time", headerName: "Time int", width: 100 },
@@ -281,16 +304,26 @@ export default function QuantitySelect() {
       headerName: "LOW Z 10",
       width: 80,
     },
-    // {
-    //   field: "update_datetime",
-    //   headerName: "Update Datetime",
-    //   width: 200,
-    //   renderCell: (params) => (
-    //     <Typography variant="h7">
-    //       {formatCreateDate(params.row.update_datetime)}
-    //     </Typography>
-    //   ),
-    // },
+    {
+      field: "create_time",
+      headerName: "Create Time",
+      width: 200,
+      renderCell: (params) => (
+        <Typography variant="h7">
+          {formatdatewithtimeforplotly(params.row.update_datetime)}
+        </Typography>
+      ),
+    },
+    {
+      field: "update_datetime",
+      headerName: "Update Time",
+      width: 200,
+      renderCell: (params) => (
+        <Typography variant="h7">
+          {formatdatewithtimeforplotly(params.row.update_datetime)}
+        </Typography>
+      ),
+    },
   ];
 
   return (
@@ -358,11 +391,15 @@ export default function QuantitySelect() {
                       borderRight: "1px solid #e0e0e0",
                       // borderTop: "1px solid #e0e0e0",
                     },
-                    "& .MuiDataGrid-columnHeader": {
-                      borderRight: "1px solid #e0e0e0",
-                      borderTop: "1px solid #e0e0e0",
-                      alignItems: "center",
+                    "& .MuiDataGrid-columnHeaderTitle": {
+                      fontWeight: "bold",
+                      color: "#3371ff",
+                      fontSize: "15px",
+                      textAlign: "center",
+                      fontFace: "Poppins",
+                      display: "flex",
                       justifyContent: "center",
+                      alignItems: "center",
                     },
                   }}
                   slots={{

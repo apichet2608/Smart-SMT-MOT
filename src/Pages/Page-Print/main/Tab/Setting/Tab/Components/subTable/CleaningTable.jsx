@@ -29,12 +29,31 @@ export default function CleaningTable({ datafromAPIcleaning }) {
   }
 
   const columns = [
-    { field: "line_machine", headerName: "Machine", width: 100 },
-    { field: "program_name", headerName: "Program", width: 160 },
+    {
+      field: "line_machine",
+      headerName: "Machine",
+      width: 100,
+      align: "center",
+      headerAlign: "center",
+      renderCell: (params) => (
+        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+          {params.value}
+        </span>
+      ),
+    },
+    {
+      field: "program_name",
+      headerName: "Program",
+      width: 160,
+      align: "center",
+      headerAlign: "center",
+    },
     {
       field: "update_at",
       headerName: "Date",
       width: 200,
+      align: "center",
+      headerAlign: "center",
       renderCell: (params) => {
         return formatdatewithtime(params.row.update_at);
       },
@@ -42,7 +61,9 @@ export default function CleaningTable({ datafromAPIcleaning }) {
     {
       field: "cln_mode_1_flg",
       headerName: "1st round operate",
-      width: 130,
+      width: 140,
+      align: "center",
+      headerAlign: "center",
       renderCell: (params) => {
         const cln_mode_1_flg = params.value;
         let backgroundColor, result;
@@ -77,11 +98,19 @@ export default function CleaningTable({ datafromAPIcleaning }) {
         );
       },
     },
-    { field: "interval_mode_1", headerName: "1st round interval", width: 130 },
+    {
+      field: "interval_mode_1",
+      headerName: "1st round interval",
+      width: 140,
+      align: "center",
+      headerAlign: "center",
+    },
     {
       field: "cln_mode_2_flg",
       headerName: "2nd round operate",
-      width: 130,
+      width: 140,
+      align: "center",
+      headerAlign: "center",
       renderCell: (params) => {
         const cln_mode_2_flg = params.value;
         let backgroundColor, result;
@@ -116,11 +145,19 @@ export default function CleaningTable({ datafromAPIcleaning }) {
         );
       },
     },
-    { field: "interval_mode_2", headerName: "2nd round interval", width: 135 },
+    {
+      field: "interval_mode_2",
+      headerName: "2nd round interval",
+      width: 140,
+      align: "center",
+      headerAlign: "center",
+    },
     {
       field: "auto_flg",
       headerName: "Process wait",
-      width: 105,
+      width: 110,
+      align: "center",
+      headerAlign: "center",
       renderCell: (params) => {
         const auto_flg = params.value;
         let backgroundColor, result;
@@ -169,31 +206,47 @@ export default function CleaningTable({ datafromAPIcleaning }) {
     //   </span>
     // ),
     // },
-    { field: "auto_time", headerName: "Wait print (min)", width: 110 },
+    {
+      field: "auto_time",
+      headerName: "Wait print (min)",
+      width: 130,
+      align: "center",
+      headerAlign: "center",
+    },
     {
       field: "fwd_speed_1_st",
       headerName: "1st clean speed forward",
-      width: 170,
+      width: 180,
+      align: "center",
+      headerAlign: "center",
     },
     {
       field: "bwd_speed_1_st",
       headerName: "1st clean speed backward",
-      width: 180,
+      width: 190,
+      align: "center",
+      headerAlign: "center",
     },
     {
       field: "fwd_speed_2_nd",
       headerName: "2nd clean speed forward",
-      width: 170,
+      width: 190,
+      align: "center",
+      headerAlign: "center",
     },
     {
       field: "bwd_speed_2_nd",
       headerName: "2nd clean speed backward",
-      width: 190,
+      width: 200,
+      align: "center",
+      headerAlign: "center",
     },
     {
       field: "wet_flg_1_st",
       headerName: "1st wet forward",
-      width: 120,
+      width: 130,
+      align: "center",
+      headerAlign: "center",
       renderCell: (params) => {
         const wet_flg_1_st = params.value;
         let backgroundColor, result;
@@ -231,7 +284,9 @@ export default function CleaningTable({ datafromAPIcleaning }) {
     {
       field: "wet_flg_2_nd",
       headerName: "1st wet backward",
-      width: 130,
+      width: 140,
+      align: "center",
+      headerAlign: "center",
       renderCell: (params) => {
         const wet_flg_2_nd = params.value;
         let backgroundColor, result;
@@ -269,7 +324,9 @@ export default function CleaningTable({ datafromAPIcleaning }) {
     {
       field: "fwd_vac_flg_1_st",
       headerName: "1st vacuum forward",
-      width: 140,
+      width: 150,
+      align: "center",
+      headerAlign: "center",
       renderCell: (params) => {
         const fwd_vac_flg_1_st = params.value;
         let backgroundColor, result;
@@ -307,7 +364,9 @@ export default function CleaningTable({ datafromAPIcleaning }) {
     {
       field: "bwd_vac_flg_1_st",
       headerName: "1st vacuum backward",
-      width: 160,
+      width: 170,
+      align: "center",
+      headerAlign: "center",
       renderCell: (params) => {
         const bwd_vac_flg_1_st = params.value;
         let backgroundColor, result;
@@ -345,7 +404,9 @@ export default function CleaningTable({ datafromAPIcleaning }) {
     {
       field: "fwd_vac_flg_2_nd",
       headerName: "2nd vacuum forward",
-      width: 140,
+      width: 160,
+      align: "center",
+      headerAlign: "center",
       renderCell: (params) => {
         const fwd_vac_flg_2_nd = params.value;
         let backgroundColor, result;
@@ -383,7 +444,9 @@ export default function CleaningTable({ datafromAPIcleaning }) {
     {
       field: "bwd_vac_flg_2_nd",
       headerName: "2nd vacuum backward",
-      width: 160,
+      width: 180,
+      align: "center",
+      headerAlign: "center",
       renderCell: (params) => {
         const bwd_vac_flg_2_nd = params.value;
         let backgroundColor, result;
@@ -428,7 +491,32 @@ export default function CleaningTable({ datafromAPIcleaning }) {
         pagination
         getRowHeight={() => "auto"}
         pageSize={5}
-        sx={{ height: 550, maxWidth: "100%", marginTop: 2 }}
+        sx={{
+          height: 550,
+          maxWidth: "100%",
+          marginTop: 2,
+          "& .MuiDataGrid-cell": {
+            borderRight: "1px solid #e0e0e0",
+            // borderTop: "1px solid #e0e0e0",
+          },
+          "& .MuiDataGrid-columnHeader": {
+            borderRight: "1px solid #e0e0e0",
+            borderTop: "1px solid #e0e0e0",
+            alignItems: "center",
+            justifyContent: "center",
+          },
+          "& .MuiDataGrid-columnHeaderTitle": {
+            fontWeight: "bold",
+            color: "#3371ff",
+            fontSize: "14px",
+            textAlign: "center",
+            FontFace: "Poppins",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          },
+          backgroundColor: "#fff",
+        }}
         slots={{
           toolbar: GridToolbar,
         }}
