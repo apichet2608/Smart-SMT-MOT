@@ -310,7 +310,7 @@ export default function QuantitySelect() {
       width: 200,
       renderCell: (params) => (
         <Typography variant="h7">
-          {formatdatewithtimeforplotly(params.row.update_datetime)}
+          {formatdatewithtimeforplotly(params.row.create_time)}
         </Typography>
       ),
     },
@@ -416,7 +416,7 @@ export default function QuantitySelect() {
             </Grid>
           ) : (
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-              <>{isLoading ? <LoadingPage /> : <Item>No Data</Item>}</>
+              <>{isLoading ? <LoadingPage /> : <Item>Choose Data</Item>}</>
             </Grid>
           )}
         </Grid>

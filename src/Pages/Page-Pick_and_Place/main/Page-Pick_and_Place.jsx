@@ -53,6 +53,31 @@ export default function BasicTabs() {
         value={value}
         onChange={handleChange}
         aria-label="basic tabs example"
+        sx={{
+          ".MuiTabs-indicator": {
+            backgroundColor: "#FDFEFE",
+            height: "5px",
+          },
+          ".MuiTab-root": {
+            textTransform: "none",
+            fontWeight: 600,
+            borderRadius: "10px",
+            fontSize: "1rem",
+            marginRight: 0.2,
+            marginLeft: 0.6,
+            "&:hover": {
+              backgroundColor: "#B0C4DE",
+            },
+            "&.Mui-selected": {
+              color: "#EBF5FB",
+              backgroundColor: "#4682B4",
+            },
+            "&.Mui-focusVisible": {
+              backgroundColor: "#FDFEFE",
+              color: "primary.contrastText",
+            },
+          },
+        }}
       >
         <Tab label="Setting" {...a11yProps(0)} />
         <Tab label="Pickup Rate" {...a11yProps(1)} />

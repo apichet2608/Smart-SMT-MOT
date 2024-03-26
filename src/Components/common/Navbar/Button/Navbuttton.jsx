@@ -60,7 +60,7 @@ function Navbuttton({
                   activeButton === text.name
                     ? isDarkMode
                       ? "#E0E4E5"
-                      : "#42a5f5"
+                      : "#6495ED"
                     : "transparent",
                 m: 0.5,
                 borderRadius: "10px",

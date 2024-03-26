@@ -29,8 +29,28 @@ export default function Print_conTable({ datafromAPIprintcon }) {
   }
 
   const columns = [
-    { field: "line_machine", headerName: "Machine", width: 100 },
-    { field: "program_name", headerName: "Program", width: 200 },
+    {
+      field: "line_machine",
+      headerName: "Machine",
+      width: 100,
+      headerAlign: "center",
+      align: "center",
+      renderCell: (params) => (
+        <span style={{ color: "#34495E", fontWeight: "bold" }}>
+          {params.value}
+        </span>
+      ),
+    },
+    {
+      field: "program_name_cut",
+      headerName: "Program",
+      width: 200,
+      renderCell: (params) => (
+        <span style={{ color: "#6495ED", fontWeight: "bold" }}>
+          {params.value}
+        </span>
+      ),
+    },
     {
       field: "update_at",
       headerName: "Date",
@@ -39,16 +59,76 @@ export default function Print_conTable({ datafromAPIprintcon }) {
         return formatdatewithtime(params.row.update_at);
       },
     },
-    { field: "f_sq_speed", headerName: "Print speed F", width: 200 },
-    { field: "r_sq_speed", headerName: "Print speed R", width: 200 },
-    { field: "sq_press_f", headerName: "Print pressure F", width: 200 },
-    { field: "sq_press_r", headerName: "Print pressure R", width: 200 },
-    { field: "sq_length", headerName: "Squeege length", width: 200 },
-    { field: "prt_stroke_f", headerName: "Offset F", width: 200 },
-    { field: "prt_stroke_r", headerName: "Offset R", width: 200 },
-    { field: "clearance", headerName: "Cleanrance", width: 200 },
-    { field: "lift_dwn_speed", headerName: "Down speed", width: 200 },
-    { field: "lift_dwn_stroke", headerName: "Down stroke", width: 200 },
+    {
+      field: "f_sq_speed",
+      headerName: "Print speed F",
+      width: 200,
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "r_sq_speed",
+      headerName: "Print speed R",
+      width: 200,
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "sq_press_f",
+      headerName: "Print pressure F",
+      width: 200,
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "sq_press_r",
+      headerName: "Print pressure R",
+      width: 200,
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "sq_length",
+      headerName: "Squeege length",
+      width: 200,
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "prt_stroke_f",
+      headerName: "Offset F",
+      width: 200,
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "prt_stroke_r",
+      headerName: "Offset R",
+      width: 200,
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "clearance",
+      headerName: "Cleanrance",
+      width: 200,
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "lift_dwn_speed",
+      headerName: "Down speed",
+      width: 200,
+      align: "center",
+      headerAlign: "center",
+    },
+    {
+      field: "lift_dwn_stroke",
+      headerName: "Down stroke",
+      width: 200,
+      align: "center",
+      headerAlign: "center",
+    },
   ];
 
   return (
@@ -57,9 +137,34 @@ export default function Print_conTable({ datafromAPIprintcon }) {
         rows={DataTableAPIprintcon}
         columns={columns}
         pagination
-        getRowHeight={() => "auto"}
+        rowHeight={25}
+        // getRowHeight={() => "auto"}
         pageSize={5}
-        sx={{ height: 550, maxWidth: "100%", marginTop: 2 }}
+        sx={{
+          height: 550,
+          maxWidth: "100%",
+          marginTop: 2,
+          "& .MuiDataGrid-cell": {
+            borderRight: "1px solid #e0e0e0",
+            // borderTop: "1px solid #e0e0e0",
+          },
+          "& .MuiDataGrid-columnHeader": {
+            borderRight: "1px solid #e0e0e0",
+            borderTop: "1px solid #e0e0e0",
+            alignItems: "center",
+            justifyContent: "center",
+          },
+          "& .MuiDataGrid-columnHeaderTitle": {
+            fontWeight: "bold",
+            color: "#17202A",
+            fontSize: "14px",
+            textAlign: "center",
+            FontFace: "Poppins",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          },
+        }}
         slots={{
           toolbar: GridToolbar,
         }}

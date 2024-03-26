@@ -71,7 +71,7 @@ function Spi() {
     {
       field: "product",
       headerName: "Product",
-      width: 70,
+      width: 100,
       headerAlign: "center",
       align: "center",
     },

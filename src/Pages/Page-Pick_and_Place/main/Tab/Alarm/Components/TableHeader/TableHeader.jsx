@@ -117,7 +117,7 @@ function TableHeader({ Datas }) {
 
   return (
     <Paper>
-      <div style={{ height: 350, width: "100%" }}>
+      <div style={{ height: 620, width: "100%" }}>
         <DataGrid
           rows={Datas}
           columns={columns}

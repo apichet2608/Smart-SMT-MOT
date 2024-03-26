@@ -45,8 +45,13 @@ export default function CleaningTable({ datafromAPIcleaning }) {
       field: "program_name",
       headerName: "Program",
       width: 160,
-      align: "center",
+      // align: "center",
       headerAlign: "center",
+      renderCell: (params) => (
+        <span style={{ color: "  #6495ED", fontWeight: "bold" }}>
+          {params.value}
+        </span>
+      ),
     },
     {
       field: "update_at",
@@ -65,16 +70,20 @@ export default function CleaningTable({ datafromAPIcleaning }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => {
-        const cln_mode_1_flg = params.value;
+        const cln_mode_2_flg = params.value;
         let backgroundColor, result;
+        let color = "";
 
-        switch (cln_mode_1_flg) {
+        switch (cln_mode_2_flg) {
           case "ON":
-            backgroundColor = "#58D68D";
+            backgroundColor = "#ABEBC6";
+            color = "#0E6655";
+
             result = "ON";
             break;
           case "OFF":
-            backgroundColor = "#F1948A";
+            backgroundColor = "#F5B7B1";
+            color = "#922B21";
             result = "OFF";
             break;
         }
@@ -85,9 +94,10 @@ export default function CleaningTable({ datafromAPIcleaning }) {
               backgroundColor,
               width: 60,
               height: 20,
-              color: "black",
+              color: color,
               borderRadius: "10px",
               fontSize: 15,
+              fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -114,14 +124,18 @@ export default function CleaningTable({ datafromAPIcleaning }) {
       renderCell: (params) => {
         const cln_mode_2_flg = params.value;
         let backgroundColor, result;
+        let color = "";
 
         switch (cln_mode_2_flg) {
           case "ON":
-            backgroundColor = "#58D68D";
+            backgroundColor = "#ABEBC6";
+            color = "#0E6655";
+
             result = "ON";
             break;
           case "OFF":
-            backgroundColor = "#F1948A";
+            backgroundColor = "#F5B7B1";
+            color = "#922B21";
             result = "OFF";
             break;
         }
@@ -132,9 +146,10 @@ export default function CleaningTable({ datafromAPIcleaning }) {
               backgroundColor,
               width: 60,
               height: 20,
-              color: "black",
+              color: color,
               borderRadius: "10px",
               fontSize: 15,
+              fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -159,16 +174,20 @@ export default function CleaningTable({ datafromAPIcleaning }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => {
-        const auto_flg = params.value;
+        const cln_mode_2_flg = params.value;
         let backgroundColor, result;
+        let color = "";
 
-        switch (auto_flg) {
+        switch (cln_mode_2_flg) {
           case "ON":
-            backgroundColor = "#58D68D";
+            backgroundColor = "#ABEBC6";
+            color = "#0E6655";
+
             result = "ON";
             break;
           case "OFF":
-            backgroundColor = "#F1948A";
+            backgroundColor = "#F5B7B1";
+            color = "#922B21";
             result = "OFF";
             break;
         }
@@ -179,9 +198,10 @@ export default function CleaningTable({ datafromAPIcleaning }) {
               backgroundColor,
               width: 60,
               height: 20,
-              color: "black",
+              color: color,
               borderRadius: "10px",
               fontSize: 15,
+              fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -248,16 +268,20 @@ export default function CleaningTable({ datafromAPIcleaning }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => {
-        const wet_flg_1_st = params.value;
+        const cln_mode_2_flg = params.value;
         let backgroundColor, result;
+        let color = "";
 
-        switch (wet_flg_1_st) {
+        switch (cln_mode_2_flg) {
           case "ON":
-            backgroundColor = "#58D68D";
+            backgroundColor = "#ABEBC6";
+            color = "#0E6655";
+
             result = "ON";
             break;
           case "OFF":
-            backgroundColor = "#F1948A";
+            backgroundColor = "#F5B7B1";
+            color = "#922B21";
             result = "OFF";
             break;
         }
@@ -268,9 +292,10 @@ export default function CleaningTable({ datafromAPIcleaning }) {
               backgroundColor,
               width: 60,
               height: 20,
-              color: "black",
+              color: color,
               borderRadius: "10px",
               fontSize: 15,
+              fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -288,16 +313,20 @@ export default function CleaningTable({ datafromAPIcleaning }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => {
-        const wet_flg_2_nd = params.value;
+        const cln_mode_2_flg = params.value;
         let backgroundColor, result;
+        let color = "";
 
-        switch (wet_flg_2_nd) {
+        switch (cln_mode_2_flg) {
           case "ON":
-            backgroundColor = "#58D68D";
+            backgroundColor = "#ABEBC6";
+            color = "#0E6655";
+
             result = "ON";
             break;
           case "OFF":
-            backgroundColor = "#F1948A";
+            backgroundColor = "#F5B7B1";
+            color = "#922B21";
             result = "OFF";
             break;
         }
@@ -308,9 +337,10 @@ export default function CleaningTable({ datafromAPIcleaning }) {
               backgroundColor,
               width: 60,
               height: 20,
-              color: "black",
+              color: color,
               borderRadius: "10px",
               fontSize: 15,
+              fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -328,16 +358,20 @@ export default function CleaningTable({ datafromAPIcleaning }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => {
-        const fwd_vac_flg_1_st = params.value;
+        const cln_mode_2_flg = params.value;
         let backgroundColor, result;
+        let color = "";
 
-        switch (fwd_vac_flg_1_st) {
+        switch (cln_mode_2_flg) {
           case "ON":
-            backgroundColor = "#58D68D";
+            backgroundColor = "#ABEBC6";
+            color = "#0E6655";
+
             result = "ON";
             break;
           case "OFF":
-            backgroundColor = "#F1948A";
+            backgroundColor = "#F5B7B1";
+            color = "#922B21";
             result = "OFF";
             break;
         }
@@ -348,9 +382,10 @@ export default function CleaningTable({ datafromAPIcleaning }) {
               backgroundColor,
               width: 60,
               height: 20,
-              color: "black",
+              color: color,
               borderRadius: "10px",
               fontSize: 15,
+              fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -368,16 +403,20 @@ export default function CleaningTable({ datafromAPIcleaning }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => {
-        const bwd_vac_flg_1_st = params.value;
+        const cln_mode_2_flg = params.value;
         let backgroundColor, result;
+        let color = "";
 
-        switch (bwd_vac_flg_1_st) {
+        switch (cln_mode_2_flg) {
           case "ON":
-            backgroundColor = "#58D68D";
+            backgroundColor = "#ABEBC6";
+            color = "#0E6655";
+
             result = "ON";
             break;
           case "OFF":
-            backgroundColor = "#F1948A";
+            backgroundColor = "#F5B7B1";
+            color = "#922B21";
             result = "OFF";
             break;
         }
@@ -388,9 +427,10 @@ export default function CleaningTable({ datafromAPIcleaning }) {
               backgroundColor,
               width: 60,
               height: 20,
-              color: "black",
+              color: color,
               borderRadius: "10px",
               fontSize: 15,
+              fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -408,16 +448,20 @@ export default function CleaningTable({ datafromAPIcleaning }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => {
-        const fwd_vac_flg_2_nd = params.value;
+        const cln_mode_2_flg = params.value;
         let backgroundColor, result;
+        let color = "";
 
-        switch (fwd_vac_flg_2_nd) {
+        switch (cln_mode_2_flg) {
           case "ON":
-            backgroundColor = "#58D68D";
+            backgroundColor = "#ABEBC6";
+            color = "#0E6655";
+
             result = "ON";
             break;
           case "OFF":
-            backgroundColor = "#F1948A";
+            backgroundColor = "#F5B7B1";
+            color = "#922B21";
             result = "OFF";
             break;
         }
@@ -428,9 +472,10 @@ export default function CleaningTable({ datafromAPIcleaning }) {
               backgroundColor,
               width: 60,
               height: 20,
-              color: "black",
+              color: color,
               borderRadius: "10px",
               fontSize: 15,
+              fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -448,16 +493,20 @@ export default function CleaningTable({ datafromAPIcleaning }) {
       align: "center",
       headerAlign: "center",
       renderCell: (params) => {
-        const bwd_vac_flg_2_nd = params.value;
+        const cln_mode_2_flg = params.value;
         let backgroundColor, result;
+        let color = "";
 
-        switch (bwd_vac_flg_2_nd) {
+        switch (cln_mode_2_flg) {
           case "ON":
-            backgroundColor = "#58D68D";
+            backgroundColor = "#ABEBC6";
+            color = "#0E6655";
+
             result = "ON";
             break;
           case "OFF":
-            backgroundColor = "#F1948A";
+            backgroundColor = "#F5B7B1";
+            color = "#922B21";
             result = "OFF";
             break;
         }
@@ -468,9 +517,10 @@ export default function CleaningTable({ datafromAPIcleaning }) {
               backgroundColor,
               width: 60,
               height: 20,
-              color: "black",
+              color: color,
               borderRadius: "10px",
               fontSize: 15,
+              fontWeight: "bold",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -489,7 +539,8 @@ export default function CleaningTable({ datafromAPIcleaning }) {
         rows={DataTableAPIcleaning}
         columns={columns}
         pagination
-        getRowHeight={() => "auto"}
+        // getRowHeight={() => "auto"}
+        rowHeight={25}
         pageSize={5}
         sx={{
           height: 550,
@@ -507,7 +558,7 @@ export default function CleaningTable({ datafromAPIcleaning }) {
           },
           "& .MuiDataGrid-columnHeaderTitle": {
             fontWeight: "bold",
-            color: "#3371ff",
+            color: "#17202A",
             fontSize: "14px",
             textAlign: "center",
             FontFace: "Poppins",

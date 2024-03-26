@@ -150,7 +150,7 @@ export default function MiniDrawer({ isDarkMode }) {
         position="fixed"
         open={open}
         sx={{
-          backgroundColor: isDarkMode ? "#121212" : "#42a5f5",
+          backgroundColor: isDarkMode ? "#121212" : "#6495ED	",
         }}
       >
         <Toolbar>

@@ -10,6 +10,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Grid from "@mui/material/Unstable_Grid2";
 import Paper from "@mui/material/Paper";
 import CleaningTable from "./Components/subTable/CleaningTable";
+import Loading_dot from "../../../../../../Components/common/Loading/loading";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -39,6 +40,9 @@ export default function CleaningCondition() {
 
   const [distinct_program, setdistinct_program] = useState([]);
   const [select_program, setselect_program] = useState({ program_name: "ALL" });
+
+  //loading table
+  const [loading, setLoading] = useState(false);
 
   const fetch_machine = async () => {
     try {
@@ -82,8 +86,8 @@ export default function CleaningCondition() {
   };
 
   const fetchDataTable = async () => {
+    setLoading(true); // Start loading
     try {
-      // Create a new URLSearchParams object to construct the query string
       const params = new URLSearchParams();
       params.append("select_machine", select_machine.line_machine);
       params.append("select_program", select_program.program_name);
@@ -100,9 +104,12 @@ export default function CleaningCondition() {
         setDataAPItable(jsonData);
       } else {
         console.log("No data available.");
+        setDataAPItable([]); // Clear the table if no data
       }
     } catch (error) {
-      //   console.error("Error fetching data:", error);
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false); // End loading
     }
   };
 
@@ -194,11 +201,24 @@ export default function CleaningCondition() {
             </Item>
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            <Item>
-              {DataAPItable && DataAPItable.length > 0 && (
+            {loading ? (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  height: "100%",
+                }}
+              >
+                <Loading_dot />
+              </div>
+            ) : DataAPItable && DataAPItable.length > 0 ? (
+              <Item>
                 <CleaningTable datafromAPIcleaning={DataAPItable} />
-              )}
-            </Item>
+              </Item>
+            ) : (
+              <Loading_dot />
+            )}
           </Grid>
         </Grid>
       </React.Fragment>

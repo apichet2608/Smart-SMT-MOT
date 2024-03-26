@@ -10,6 +10,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Paper from "@mui/material/Paper";
 import CleaningTable from "./Components/subTable/CleaningTable";
 import Print_conTable from "./Components/subTable/PrintConTable";
+import Loading_dot from "../../../../../../Components/common/Loading/loading";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -39,6 +40,9 @@ export default function PrintCondition() {
 
   const [distinct_program, setdistinct_program] = useState([]);
   const [select_program, setselect_program] = useState({ program_name: "ALL" });
+
+  //loading table
+  const [loading, setLoading] = useState(false);
 
   const fetch_machine = async () => {
     try {
@@ -82,6 +86,7 @@ export default function PrintCondition() {
   };
 
   const fetchDataTable = async () => {
+    setLoading(true);
     try {
       // Create a new URLSearchParams object to construct the query string
       const params = new URLSearchParams();
@@ -102,7 +107,9 @@ export default function PrintCondition() {
         console.log("No data available.");
       }
     } catch (error) {
-      //   console.error("Error fetching data:", error);
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -194,11 +201,24 @@ export default function PrintCondition() {
         </Grid>
 
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-          <Item>
-            {DataAPItable && DataAPItable.length > 0 && (
+          {loading ? (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+              }}
+            >
+              <Loading_dot />
+            </div>
+          ) : DataAPItable && DataAPItable.length > 0 ? (
+            <Item>
               <Print_conTable datafromAPIprintcon={DataAPItable} />
-            )}
-          </Item>
+            </Item>
+          ) : (
+            <Loading_dot />
+          )}
         </Grid>
       </Grid>
       {/* </Container> */}
