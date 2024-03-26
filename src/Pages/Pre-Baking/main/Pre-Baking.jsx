@@ -15,6 +15,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import Tempereture from "../Components/Tempereture";
 import Humidity from "../Components/Humidity";
 import Chip from "@mui/material/Chip";
+import Datagrid from "../Components/Datagrid.jsx";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -51,7 +52,7 @@ const PreBaking = () => {
     setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   };
 
-  const [selectedMccode, setSelectedMccode] = useState(null);
+  const [selectedMccode, setSelectedMccode] = useState("");
   const [distinctMccode, setDistinctMccode] = useState([]);
 
   const fetchDistinctMccode = async () => {
@@ -120,6 +121,108 @@ const PreBaking = () => {
       setisLoading(false);
     }
   };
+
+  //! Datagrid
+  const [rows, setRows] = useState([]);
+  const columns = [
+    // {
+    //   field: "id",
+    //   headerName: "ID",
+    //   width: 100,
+    //   headerAlign: "center",
+    //   align: "center",
+    // },
+    {
+      field: "create_at",
+      headerName: "Create At",
+      width: 200,
+      headerAlign: "center",
+      align: "center",
+      renderCell: (params) => {
+        return <div>{formatdatewithtimeforplotly(params.value)}</div>;
+      },
+    },
+    {
+      field: "mc_code",
+      headerName: "MC Code",
+      width: 150,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "temp_pv",
+      headerName: "Temperature PV",
+      width: 150,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "humid_pv",
+      headerName: "Humidity PV",
+      width: 150,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "status",
+      headerName: "Status",
+      width: 150,
+      headerAlign: "center",
+      align: "center",
+    },
+    {
+      field: "alarm_temp_desc",
+      headerName: "Temperature Alarm Desc",
+      width: 400,
+      headerAlign: "center",
+      align: "center",
+      renderCell: (params) => {
+        return (
+          <div
+            className={`${
+              params.value === "Normal" ? "text-success" : "text-error"
+            }`}
+          >
+            {params.value}
+          </div>
+        );
+      },
+    },
+    {
+      field: "alarm_humid_desc",
+      headerName: "Humidity Alarm Desc",
+      width: 400,
+      headerAlign: "center",
+      align: "center",
+      renderCell: (params) => {
+        return (
+          <div
+            className={`${
+              params.value === "Normal" ? "text-success" : "text-error"
+            }`}
+          >
+            {params.value}
+          </div>
+        );
+      },
+    },
+  ];
+
+  useEffect(() => {
+    axios
+      .get(
+        `${import.meta.env.VITE_IP_API}${
+          import.meta.env.VITE_smt_binder_oven_data
+        }/dataTable?hours=${quantity}&mc_code=${selectedMccode.mc_code}`
+      )
+      .then((response) => {
+        console.log(response.data);
+        setRows(response.data);
+      })
+      .catch((error) => {
+        console.error(`Error fetching distinct Mccodes: ${error}`);
+      });
+  }, [selectedMccode, quantity]);
 
   return (
     <div>
@@ -196,6 +299,11 @@ const PreBaking = () => {
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 <Item>
                   <Humidity dataplot={data} categories={categories} />
+                </Item>
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <Item>
+                  <Datagrid rows={rows} columns={columns} />
                 </Item>
               </Grid>
             </>
